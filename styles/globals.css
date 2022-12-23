@@ -1,5 +1,99 @@
-:root {
-  --max-width: 1100px;
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: Avenir Next;
+    font-weight: 400;
+    src: url(/fonts/AvenirNext/AvenirNext-Regular-08.ttf);
+  }
+
+  @font-face {
+    font-family: Avenir Next;
+    font-weight: 700;
+    src: url(/fonts/AvenirNext/AvenirNext-Bold-01.ttf);
+  }
+
+  @font-face {
+    font-family: Avenir Next;
+    font-weight: 600;
+    src: url(/fonts/AvenirNext/AvenirNext-DemiBold-03.ttf);
+  }
+}
+
+@layer components {
+  .p-small {
+    @apply text-xs;
+    line-height: 1rem;
+  }
+
+  .p-regular {
+    @apply text-sm;
+    line-height: 1.188rem;
+  }
+}
+
+h1 {
+  /* 40px */
+  font-size: 2.5rem;
+  line-height: 3.438rem;
+  font-weight: 700;
+}
+
+h2 {
+  /* 32px */
+  font-size: 2rem;
+  line-height: 2.75rem;
+}
+
+h3 {
+  /* 24px */
+  font-size: 1.5rem;
+  line-height: 2.063rem;
+}
+
+h4 {
+  /* 20px */
+  font-size: 1.25rem;
+  line-height: 1.688rem;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.375rem;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  color: rbg(--foreground-rgb);
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* :root {
+  --max-width: 1280px;
   --border-radius: 12px;
   --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
     'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
@@ -38,8 +132,8 @@
   --callout-border-rgb: 172, 175, 176;
   --card-rgb: 180, 185, 188;
   --card-border-rgb: 131, 134, 135;
-}
-
+} */
+/* 
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
@@ -71,37 +165,10 @@
     --card-rgb: 100, 100, 100;
     --card-border-rgb: 200, 200, 200;
   }
-}
+} */
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: rbg(--foreground-rgb);
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
-}
+} */

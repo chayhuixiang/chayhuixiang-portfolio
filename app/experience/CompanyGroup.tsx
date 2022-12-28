@@ -21,21 +21,25 @@ const CompanyGroup = () => {
   const calculateMobileFocus = useCallback((index: number) => {
     const n = sortedCompanies.length;
     let snap: number;
-    if (window.innerWidth < 768 && window.innerWidth >= 640) {
-      const x = 1 / (n-2);
-      if (index === n-1) {
-        snap = 1;
-      } else if (index === 0) {
-        snap = 0;
+    if (typeof window !== 'undefined') {
+      if (window.innerWidth < 768 && window.innerWidth >= 640) {
+        const x = 1 / (n-2);
+        if (index === n-1) {
+          snap = 1;
+        } else if (index === 0) {
+          snap = 0;
+        } else {
+          snap = (0.5 + index - 1) * x;
+        }
       } else {
-        snap = (0.5 + index - 1) * x;
+        const x = 1 / (n-1);
+        snap = index * x;
       }
+  
+      return Math.abs(snap - scrollPercentage) <= 0.1;
     } else {
-      const x = 1 / (n-1);
-      snap = index * x;
+      return true;
     }
-
-    return Math.abs(snap - scrollPercentage) <= 0.1;
 
   },[scrollPercentage]);
 

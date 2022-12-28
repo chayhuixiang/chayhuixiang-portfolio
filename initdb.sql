@@ -10,12 +10,12 @@ CREATE TABLE IF NOT EXISTS skill (
 );
 
 INSERT INTO skill (name, logo_path) VALUES
-  ('Frontend Development', 'photo'),
-  ('Backend Development', 'server-stack'),
-  ('Machine Learning and Data Analytics', 'chart-pie'),
-  ('Blockchain & Web3', 'link'),
-  ('Firmware Development', 'cpu-chip'),
-  ('DevOps', 'cloud-arrow-up');
+  ('Frontend Development', '/images/skill/frontend.svg'),
+  ('Backend Development', '/images/skill/backend.svg'),
+  ('Machine Learning and Data Analytics', '/images/skill/mlda.svg'),
+  ('Blockchain & Web3', '/images/skill/blockchain.svg'),
+  ('Firmware Development', '/images/skill/firmware.svg'),
+  ('DevOps', '/images/skill/devops.svg');
 
 CREATE TABLE IF NOT EXISTS stack (
   name STRING PRIMARY KEY,
@@ -29,7 +29,9 @@ CREATE TABLE IF NOT EXISTS stack (
 INSERT INTO stack (name, logo_path, colour, skill_name, skill_name_order) VALUES
   ('Python', '/images/stack/python.svg', 'FFC107', NULL, NULL),
   ('Java', '/images/stack/java.svg', 'F44336', NULL, NULL),
-  ('Mcfunction', '/images/stack/mcfunction.svg', 'B7835A', NULL, NULL)
+  ('Mcfunction', '/images/stack/mcfunction.svg', 'B7835A', NULL, NULL),
+  ('IPFS', '/images/stack/ipfs.svg', '449294', NULL, NULL),
+  ('Svelte', '/images/stack/svelte.svg', 'FF3E00', NULL, NULL)
 
 INSERT INTO stack (name, logo_path, colour, skill_work_order, skill_name, skill_name_order) VALUES
   ('Arduino', '/images/stack/arduino.svg', '01A3A9', 1, 'Firmware Development', 1),
@@ -48,7 +50,7 @@ INSERT INTO stack (name, logo_path, colour, skill_name, skill_name_order) VALUES
   ('Javascript', '/images/stack/javascript.svg', 'F7D302', 'Frontend Development', 3),
   ('Next', '/images/stack/next.svg', '212121', 'Frontend Development', 6),
   ('Figma', '/images/stack/figma.svg', 'FFC400', 'Frontend Development', 7),
-  ('Tailwind', '/images/stack/tailwindcss.svg', '00ACC1', 'Frontend Development', 8),
+  ('Tailwind', '/images/stack/tailwind.svg', '00ACC1', 'Frontend Development', 8),
   ('NodeJS', '/images/stack/nodejs.svg', '27A366', 'Backend Development', 1),
   ('Express', '/images/stack/express.svg', '000000', 'Backend Development', 2),
   ('Flask', '/images/stack/flask.svg', '000000','Backend Development', 3),
@@ -111,7 +113,7 @@ INSERT INTO company (name, position, logo_path_light, logo_path_dark, start_date
   ('Tezos (TZ APAC)', 'Student Ambassador', '/images/company/tezos-light.svg',
     '/images/company/tezos-dark.svg', DATE '2022-08-25', NULL,
     Array[
-      'Contributing to the official OpenTezos documentation'
+      'Contributing to the official OpenTezos documentation',
       'Represented Tezos at Singapore Fintech Festival 2022'
     ]
   );

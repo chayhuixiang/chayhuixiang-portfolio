@@ -7,7 +7,7 @@ import Link from 'next/link'
 
 const ButtonGroup = () => {
   return (
-    <div className='flex gap-5'>
+    <div className='flex sm:gap-5 gap-0'>
       <Link href='/contact'>
         <Button onClick={() => console.log("Let's talk!")} type='solid' colour='purple' className='gap-4 shadow-lg'>
           <CodeBracketIcon className='w-6 h-6' />

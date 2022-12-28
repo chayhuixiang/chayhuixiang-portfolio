@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react'
 
 type Props = {
@@ -12,19 +14,19 @@ const Button = ({ onClick, children, className, type, colour }: Props) => {
   let colourStyle = '';
   if (type === 'solid') {
     if (colour === 'purple') {
-      colourStyle += 'bg-purple text-white hover:bg-[#8873EFe0]';
+      colourStyle += 'bg-purple dark:bg-purple-light text-white hover:bg-purple/90 dark:hover:bg-purple-light/90 dark:text-indigo';
     } else {
-      colourStyle += 'bg-blue-dark text-white';
+      colourStyle += 'bg-blue-dark text-white dark:bg-zinc-300 text-indigo';
     }
   } else if (type === 'outline') {
-    colourStyle = 'border border-2 '
+    colourStyle = 'border-2 '
     if (colour === 'purple') {
-      colourStyle += 'border-purple text-purple hover:bg-[#8873EF10]';
+      colourStyle += 'border-purple text-purple hover:bg-purple/5';
     } else {
-      colourStyle += 'border-blue-dark text-blue-dark hover:bg-[#3A506F10]';
+      colourStyle += 'border-blue-dark text-blue-dark hover:bg-blue-dark/10 dark:border-zinc-300 dark:text-zinc-300 hover:bg-zinc-300/10';
     }
   } else {    
-    colourStyle = 'bg-transparent text-blue-dark hover:underline';
+    colourStyle = 'bg-transparent text-blue-dark hover:underline dark:text-zinc-300';
   }
 
   return (

@@ -16,7 +16,7 @@ const Button = ({ onClick, children, className, type, colour }: Props) => {
     if (colour === 'purple') {
       colourStyle += 'bg-purple dark:bg-purple-light text-white hover:bg-purple/90 dark:hover:bg-purple-light/90 dark:text-indigo';
     } else {
-      colourStyle += 'bg-blue-dark text-white dark:bg-zinc-300 text-indigo';
+      colourStyle += 'bg-blue-dark text-white dark:bg-zinc-300 dark:text-indigo';
     }
   } else if (type === 'outline') {
     colourStyle = 'border-2 '

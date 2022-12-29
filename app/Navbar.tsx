@@ -72,7 +72,7 @@ const Navbar: React.FC = () => {
       <div className='w-full flex justify-between max-w-7xl py-8 lg:px-[7.5rem] sm:px-[3rem] px-4 m-auto'>
         {/* Left Hero */}
         <Link href='/' className='flex gap-5 z-30'>
-          <Avatar className='w-12 h-12' />
+          <Avatar width={48} height={48} />
           <div className="hidden xl:flex flex-col">
             <h3 className="font-bold">Hui Xiang</h3>
             <p className="text-xs text-zinc dark:text-zinc-200 font-secondary leading-[0.813rem]">Student</p>

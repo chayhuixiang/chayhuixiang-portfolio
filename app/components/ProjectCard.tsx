@@ -17,7 +17,7 @@ type Props = {
 const ProjectCard = ({left, name, logo_path, github_link, deployed_link, description, logo_path_stack}: Props) => {
   const parsedDescription = description.split('*');
   return (
-    <article className={`w-full flex items-center flex-col rounded-xl p-4 sm:p-0 bg-zinc-100 sm:bg-transparent ${left ? 'sm:flex-row-reverse' : 'sm:flex-row'}`}>
+    <article className={`w-full flex items-center flex-col rounded-xl p-4 sm:p-0 bg-zinc-100 dark:bg-purple-dark sm:bg-transparent ${left ? 'sm:flex-row-reverse' : 'sm:flex-row'}`}>
       <div className='w-full sm:w-[27.75rem] h-36 sm:h-[15.625rem] rounded-xl p-4 bg-white dark:bg-indigo flex items-center justify-center shadow-lg relative'>
         <img src={logo_path} alt='project_logo' className='h-20 sm:w-auto'/>
       </div>

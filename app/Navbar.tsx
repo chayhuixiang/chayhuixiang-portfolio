@@ -90,7 +90,7 @@ const Navbar: React.FC = () => {
         {/* Right Icons */}
         <div className='flex gap-3 relative'>
           {/* xl */}
-          <DarkModeButton />
+          <DarkModeButton className='hidden xl:flex' />
           <a href='https://drive.google.com/file/d/13K2IqjNpLheZ_HtbqIzcKw-FoA7mqYkN/view?usp=sharing' target='_blank' rel='noopener noreferrer' className='hidden xl:block'>
             <Button onClick={() => {}} type='outline' colour='blue-dark' className='gap-3'>
               <ArrowDownTrayIcon className='w-6 h-6' />

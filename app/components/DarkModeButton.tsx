@@ -5,7 +5,11 @@ import { useTheme } from 'next-themes';
 import Button from './Button';
 import { SunIcon, MoonIcon } from '@heroicons/react/24/outline';
 
-const DarkModeButton = () => {
+type Props = {
+  className?: string
+}
+
+const DarkModeButton = ({className}: Props) => {
   // dark mode button
   const [mounted, setMounted] = useState<boolean>(false);
   const { systemTheme, theme, setTheme } = useTheme();
@@ -21,13 +25,13 @@ const DarkModeButton = () => {
   const currentTheme = theme === 'system' ? systemTheme : theme;
   if (currentTheme === 'dark') {
     return (
-      <Button onClick={() => {setTheme('light')}} type='outline' colour='blue-dark' className='hidden xl:flex'>
+      <Button onClick={() => {setTheme('light')}} type='outline' colour='blue-dark' className={className}>
         <SunIcon className='w-6 h-6' />
       </Button>
     )
   } else {
     return (
-      <Button onClick={() => {setTheme('dark')}} type='outline' colour='blue-dark' className='hidden xl:flex'>
+      <Button onClick={() => {setTheme('dark')}} type='outline' colour='blue-dark' className={className}>
         <MoonIcon className='w-6 h-6' />
       </Button>
     )

@@ -37,8 +37,8 @@ const Contact = () => {
           {/* <img src={`/images/footer/github${ githubHovered ? '-hover' : '' }.svg`} alt='github' className='h-6 w-6 md:h-8 md:w-8' /> */}
           <Github />
         </a>
-        <a href='mailto:chayhuixiang@gmail.com' rel='noopener noreferrer' target='_blank' className='rounded-full h-6 w-6 md:h-8 md:w-8 flex items-center justify-center bg-zinc hover:bg-zinc/90 dark:bg-zinc-200 dark:hover:bg-zinc-200/90'>
-          <EnvelopeOpenIcon className='md:w-5 md:h-5 w-4 h-4 text-white stroke-2 dark:text-indigo'/>
+        <a href='mailto:chayhuixiang@gmail.com' rel='noopener noreferrer' target='_blank' className='rounded-full h-8 w-8 flex items-center justify-center bg-zinc hover:bg-zinc/90 dark:bg-zinc-200 dark:hover:bg-zinc-200/90'>
+          <EnvelopeOpenIcon className='w-5 h-5 text-white stroke-2 dark:text-indigo'/>
         </a>
       </div>
     </main>

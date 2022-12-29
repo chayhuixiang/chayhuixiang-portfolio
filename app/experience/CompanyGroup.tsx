@@ -45,7 +45,7 @@ const CompanyGroup = () => {
 
   return (
     <>
-      <h1 className='text-[1.75rem] leading-snug sm:text-[2.5rem]'>Companies I’ve worked at</h1>
+      <h1 className='text-[1.75rem] leading-snug sm:text-[2.5rem]'>Companies I’ve <span className='whitespace-nowrap'>worked at</span></h1>
       <div className='w-full mt-4 sm:mt-8 md:mt-32 flex flex-row gap-4 overflow-x-scroll pb-8 md:pb-32 snap-x snap-mandatory scrollbar scrollbar-track-zinc-100 dark:scrollbar-track-purple-dark scrollbar-thumb-purple dark:scrollbar-thumb-purple-light' ref={ref} onScroll={scrollHandler}>
         {sortedCompanies.map(({name, position, logo_path_light, logo_path_dark, start_date, end_date, description, logo_path_stack, link}: Company, i) => 
           <CompanyCard key={i} focus={calculateMobileFocus(i)} name={name} position={position} logo_path_light={logo_path_light} logo_path_dark={logo_path_dark} start_date={start_date} end_date={end_date} description={description} logo_path_stack={logo_path_stack} link={link} />

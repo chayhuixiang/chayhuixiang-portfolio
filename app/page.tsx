@@ -25,13 +25,15 @@ const About = () => {
                   </div>
                   <ButtonGroup />
                 </div>
-                <Avatar className='relative hidden sm:block lg:hidden flex-shrink' width={192} height={192} />
+                <Avatar className='relative hidden sm:block lg:hidden flex-shrink w-48 h-48' />
+                {/* <Avatar className='relative hidden sm:block lg:hidden flex-shrink' width={192} height={192} /> */}
               </div>
               <p className='text-center sm:text-left'>
                 I’m a Year 2 Renaissance Engineering Programme Scholar specialising in the field of Computer Science. Currently, I am focused on data analytics in sports with machine learning at <a href='https://www.fisher8.capital/' rel='noopener noreferrer' target='_blank' className='font-bold hover:underline'>Fisher8 Capital</a>, and building full-stack projects on the side.
               </p>
             </div>
-            <Avatar className='relative hidden lg:block' width={421} height={421} />
+            {/* <Avatar className='relative hidden lg:block' width={421} height={421} /> */}
+            <Avatar className='relative hidden lg:block w-[26.313rem] h-[26.313rem]' />
           </div>
           <div className='lg:mt-32 mt-12 w-full bg-red h-60 sm:h-96 relative'>
             <ImageGroup />

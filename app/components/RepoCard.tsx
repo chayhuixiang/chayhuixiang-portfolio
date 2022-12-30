@@ -1,22 +1,28 @@
 'use client'
 
+import { useTheme } from 'next-themes'
 import React, { useState } from 'react'
 import RepoDeployed from './images/projects/RepoDeployed'
 import RepoGithub from './images/projects/RepoGithub'
+import useMounted from '../../hooks/useMounted'
 
 type Props = {
   variant: 'large' | 'small',
   name: string,
   github_link: string,
   deployed_link: string | null,
-  logo_path_stack: string[],
+  logo_path_stack_dark: string[],
+  logo_path_stack_light: string[]
   colour: string,
   cover_path: string
 }
 
-const RepoCard = ({variant, name, github_link, deployed_link, logo_path_stack, colour, cover_path}: Props) => {
+const RepoCard = ({variant, name, github_link, deployed_link, logo_path_stack_light, logo_path_stack_dark, colour, cover_path}: Props) => {
   const [hovered, setHovered] = useState<boolean>(false);
-  return (
+  const mounted = useMounted();
+  const { systemTheme, theme } = useTheme();
+  const currentTheme = theme === 'system' ? systemTheme : theme;
+  return ( 
     <article className={`p-4 bg-white dark:bg-indigo rounded-xl ${variant === 'large' ? 'sm:row-span-2' : 'sm:row-span-1'}`} style={{}} onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
       <div style={{backgroundColor: `${hovered ? colour + '4D' : colour + '33'}`, backgroundImage: `url(${cover_path})`}} className={`aspect-[64/79] ${variant === 'large' ? 'sm:aspect-auto sm:h-full' : 'sm:aspect-[117/92]' } max-w-[29.25rem] w-full bg-cover rounded-xl p-6 transition-all duration-200 flex flex-col items-start`}>
         <div className='flex justify-between w-full whitespace-nowrap gap-4'>
@@ -37,7 +43,7 @@ const RepoCard = ({variant, name, github_link, deployed_link, logo_path_stack, c
         </div>
         <div className='flex justify-between w-full mt-2 md:mt-4'>
           <div className='flex bg-white dark:bg-indigo gap-2 md:gap-4 p-1 md:py-2 rounded-lg md:px-3'>
-            {logo_path_stack.map((logo, i) => <img key={i} src={logo} alt='stack_logo' className='w-6 md:w-8' />)}
+            {mounted && currentTheme === 'dark' ? logo_path_stack_dark.map((logo, i) => <img key={i} src={logo} alt='stack_logo' className='w-6 md:w-8' />) : logo_path_stack_light.map((logo, i) => <img key={i} src={logo} alt='stack_logo' className='w-6 md:w-8' />)}
           </div>
           <div className='flex sm:hidden gap-2 min-w-max items-center'>
             <a href={github_link} rel='noopener noreferrer' target='_blank' className='hover:opacity-90'>

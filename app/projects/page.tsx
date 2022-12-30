@@ -13,8 +13,8 @@ const Projects = async () => {
         <div className='w-full max-w-7xl px-4 sm:px-[3rem] lg:px-[7.5rem] py-[3.875rem] sm:py-28 m-auto'>
           <h1 className='text-center sm:text-left'>Featured Projects</h1>
           <div className='mt-6 sm:mt-4 flex flex-col gap-6 sm:gap-12'>
-            {featuredProjects.map(({name, logo_path, owner, repo, deployed_link, description, logo_path_stack}: Project, i) => 
-              <ProjectCard key={i} name={name} logo_path={logo_path} deployed_link={deployed_link!} description={description} logo_path_stack={logo_path_stack} github_link={`https://github.com/${owner}/${repo}`} left={!!(i%2)}/>
+            {featuredProjects.map(({name, logo_path, owner, repo, deployed_link, description, logo_path_stack_light, logo_path_stack_dark}: Project, i) => 
+              <ProjectCard key={i} name={name} logo_path={logo_path} deployed_link={deployed_link!} description={description} logo_path_stack_dark={logo_path_stack_dark} logo_path_stack_light={logo_path_stack_light} github_link={`https://github.com/${owner}/${repo}`} left={!!(i%2)}/>
             )}
           </div>
         </div>

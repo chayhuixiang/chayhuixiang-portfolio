@@ -20,7 +20,8 @@ export type Company = {
   'start_date': string,
   'end_date': string | null,
   'description': string[],
-  'logo_path_stack': string[],
+  'logo_path_stack_light': string[],
+  'logo_path_stack_dark',
   'link': string
 }
 
@@ -35,7 +36,8 @@ export type Project = {
   'colour': string,
   'deployed_link': string | null,
   'description': string,
-  'logo_path_stack': string[],
+  'logo_path_stack_light': string[],
+  'logo_path_stack_dark': string[],
   'repo': string,
   'owner': string,
   'pushedAt'?: string

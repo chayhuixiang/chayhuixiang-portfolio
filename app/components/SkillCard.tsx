@@ -16,7 +16,6 @@ const SkillCard = ({name, logo_path, stack}: Props) => {
   const { systemTheme, theme } = useTheme();
   const currentTheme = theme === 'system' ? systemTheme : theme;
   const logo_path_dark = logo_path.split('.')[0] + '-dark.svg';
-  console.log(logo_path_dark);
   return (
     <article className='w-full bg-white dark:bg-indigo p-6 rounded-xl'>
       <div className='flex gap-3 text-purple dark:text-purple-light'>

@@ -14,7 +14,6 @@ const CompanyGroup = () => {
     if (ref.current) {
       const scrollWidth = ref.current.scrollWidth - ref.current.clientWidth;
       setScrollPercentage(ref.current.scrollLeft / scrollWidth);
-      console.log(scrollPercentage);
     }
   }
 

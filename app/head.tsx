@@ -16,6 +16,9 @@ export default function Head() {
       <meta content="width=device-width, initial-scale=1" name="viewport" />
       <link rel="icon" href="/favicon.ico" />
 
+      <meta name="robots" content="index, follow" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta charSet="UTF-8" />
       <meta name='description' content='Chay Hui Xiang is a Year 2 Renaissance Engineering Programme Scholar specialising in the field of Computer Science.' />
 
       <meta property="og:title" content={seo.title} />
@@ -23,6 +26,9 @@ export default function Head() {
       <meta property="og:image" content={seo.image} />
       <meta property="og:url" content={seo.url} />
       <meta property="og:type" content="website" />
+      
+      <meta property="" />
+      <meta property="keywords" content="Full-stack Developer, Software Developer, Crystal Cheong"></meta>
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:creator" content={twitterUsername} />

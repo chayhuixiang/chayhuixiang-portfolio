@@ -1,22 +1,18 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { useTheme } from 'next-themes';
+import useMounted from '../../../hooks/useMounted';
 
 type Props = {
   className?: string
 }
 
 const Avatar = ({ className }: Props) => {
-  const [mounted, setMounted] = useState<boolean>(false);
+  const mounted = useMounted();
   // dark mode
   const { systemTheme, theme } = useTheme();
   const currentTheme = theme === 'system' ? systemTheme : theme;
-  
-  useEffect(() => {
-    setMounted(true);
-    return () => setMounted(false);
-  },[])
 
   if (!mounted) {
     return null

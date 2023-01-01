@@ -1,9 +1,10 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { useTheme } from 'next-themes';
 import Button from './Button';
 import { SunIcon, MoonIcon } from '@heroicons/react/24/outline';
+import useMounted from '../hooks/useMounted';
 
 type Props = {
   className?: string
@@ -11,14 +12,8 @@ type Props = {
 
 const DarkModeButton = ({className}: Props) => {
   // dark mode button
-  const [mounted, setMounted] = useState<boolean>(false);
+  const mounted = useMounted();
   const { systemTheme, theme, setTheme } = useTheme();
-
-  // update dark mode
-  useEffect(() => {
-    setMounted(true);
-    return () => setMounted(false);
-  },[]);
 
   if (!mounted) return null;
 

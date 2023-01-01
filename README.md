@@ -1,4 +1,9 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<!-- This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). -->
+
+<h1>
+  <img src="https://chayhuixiang.com/images/about/avatar.png" width="20" style="margin-right:30;">
+  Personal Portfolio Site
+</h1>
 
 ## Getting Started
 

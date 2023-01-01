@@ -2,6 +2,7 @@
 
 import React from 'react'
 import { ThemeProvider } from 'next-themes'
+import { GoogleAnalytics } from 'nextjs-google-analytics'
 
 type Props = {
   children: React.ReactNode
@@ -9,7 +10,10 @@ type Props = {
 
 const Providers = ({children}: Props) => {
   return (
-    <ThemeProvider enableSystem={true} attribute='class'>{children}</ThemeProvider>
+    <>
+      <GoogleAnalytics trackPageViews />
+      <ThemeProvider enableSystem={true} attribute='class'>{children}</ThemeProvider>
+    </>
   )
 }
 

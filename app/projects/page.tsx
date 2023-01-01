@@ -1,11 +1,21 @@
 import React from 'react'
-import { fetchedProjects } from '../../data/project'
+// import { fetchedProjects } from '../../data/project'
+// import { Project } from '../../data/schema';
 import { graphql, GraphQlQueryResponseData } from '@octokit/graphql'
-import { Project } from '../../data/schema';
-import ProjectCard from '../components/ProjectCard';
+import ProjectCard from '../../components/ProjectCard';
 import Repo from './Repo';
+import { prisma } from '../../prisma/prisma';
+import { Project } from '@prisma/client';
+
+type FetchedProject = (Project & {
+  stacks: {
+      logo_path_light: string;
+      logo_path_dark: string;
+  }[];
+});
 
 const Projects = async () => {
+  const fetchedProjects: FetchedProject[] = await fetchProjects();
   const [featuredProjects, unfeaturedProjects] = await sortProjects(fetchedProjects);
   return (
     <main>
@@ -13,8 +23,8 @@ const Projects = async () => {
         <div className='w-full max-w-7xl px-4 sm:px-[3rem] lg:px-[7.5rem] py-[3.875rem] sm:py-28 m-auto'>
           <h1 className='text-center sm:text-left'>Featured Projects</h1>
           <div className='mt-6 sm:mt-4 flex flex-col gap-6 sm:gap-12'>
-            {featuredProjects.map(({name, logo_path, owner, repo, deployed_link, description, logo_path_stack_light, logo_path_stack_dark}: Project, i) => 
-              <ProjectCard key={i} name={name} logo_path={logo_path} deployed_link={deployed_link!} description={description} logo_path_stack_dark={logo_path_stack_dark} logo_path_stack_light={logo_path_stack_light} github_link={`https://github.com/${owner}/${repo}`} left={!!(i%2)}/>
+            {featuredProjects.map(({name, logo_path, owner, repo, deployed_link, description, stacks}, i) => 
+              <ProjectCard key={i} name={name} logo_path={logo_path} deployed_link={deployed_link!} description={description} stacks={stacks}  github_link={`https://github.com/${owner}/${repo}`} left={!!(i%2)}/>
             )}
           </div>
         </div>
@@ -26,7 +36,7 @@ const Projects = async () => {
   )
 }
 
-const sortProjects = async (fetchedProjects: Project[]) => {
+const sortProjects = async (fetchedProjects: FetchedProject[]) => {
   const graphqlWithAuth = graphql.defaults({
     headers: {
       authorization: `token ${process.env.GH_PAT}`,
@@ -39,12 +49,13 @@ const sortProjects = async (fetchedProjects: Project[]) => {
   }
   query += '}'
   const result = await graphqlWithAuth<GraphQlQueryResponseData>(query);
-  fetchedProjects = fetchedProjects.map((project, i) => ({
+
+  const fetchedProjectsWithResults: (FetchedProject & {pushedAt: string})[] = fetchedProjects.map((project, i) => ({
     ...project,
     ...result[`repo${i}`]
   }));
-  const featuredProjects = fetchedProjects.filter((project) => project.featured);
-  const unfeaturedProjects = fetchedProjects.filter((project) => !project.featured);
+  const featuredProjects = fetchedProjectsWithResults.filter((project) => project.featured);
+  const unfeaturedProjects = fetchedProjectsWithResults.filter((project) => !project.featured);
   featuredProjects.sort((a, b) => {
     if (a.pushedAt && b.pushedAt) {
       return new Date(b.pushedAt).getTime() - new Date(a.pushedAt).getTime()
@@ -63,8 +74,21 @@ const sortProjects = async (fetchedProjects: Project[]) => {
       return -1;
     }
   });
-
   return [featuredProjects, unfeaturedProjects]
+}
+
+const fetchProjects = async () => {
+  const fetchedProjects = await prisma.project.findMany({
+    include: {
+      stacks: {
+        select: {
+          logo_path_dark: true,
+          logo_path_light: true
+        }
+      }
+    }
+  });
+  return fetchedProjects;
 }
 
 export default Projects

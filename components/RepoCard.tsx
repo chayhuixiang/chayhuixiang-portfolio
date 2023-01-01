@@ -4,20 +4,22 @@ import { useTheme } from 'next-themes'
 import React, { useState } from 'react'
 import RepoDeployed from './images/projects/RepoDeployed'
 import RepoGithub from './images/projects/RepoGithub'
-import useMounted from '../../hooks/useMounted'
+import useMounted from '../hooks/useMounted'
 
 type Props = {
   variant: 'large' | 'small',
   name: string,
   github_link: string,
   deployed_link: string | null,
-  logo_path_stack_dark: string[],
-  logo_path_stack_light: string[]
   colour: string,
-  cover_path: string
+  cover_path: string,
+  stacks:{
+    logo_path_light: string;
+    logo_path_dark: string;
+  }[]
 }
 
-const RepoCard = ({variant, name, github_link, deployed_link, logo_path_stack_light, logo_path_stack_dark, colour, cover_path}: Props) => {
+const RepoCard = ({variant, name, github_link, deployed_link, stacks, colour, cover_path}: Props) => {
   const [hovered, setHovered] = useState<boolean>(false);
   const mounted = useMounted();
   const { systemTheme, theme } = useTheme();
@@ -43,7 +45,7 @@ const RepoCard = ({variant, name, github_link, deployed_link, logo_path_stack_li
         </div>
         <div className='flex justify-between w-full mt-2 md:mt-4'>
           <div className='flex bg-white dark:bg-indigo gap-2 md:gap-4 p-1 md:py-2 rounded-lg md:px-3'>
-            {mounted && currentTheme === 'dark' ? logo_path_stack_dark.map((logo, i) => <img key={i} src={logo} alt='stack_logo' className='w-6 md:w-8' />) : logo_path_stack_light.map((logo, i) => <img key={i} src={logo} alt='stack_logo' className='w-6 md:w-8' />)}
+            {stacks.map(({logo_path_light, logo_path_dark}, i) => <img key={i} src={mounted && currentTheme === 'dark' ? logo_path_dark : logo_path_light} alt='stack_logo' className='w-6 md:w-8' />)}
           </div>
           <div className='flex sm:hidden gap-2 min-w-max items-center'>
             <a href={github_link} rel='noopener noreferrer' target='_blank' className='hover:opacity-90'>

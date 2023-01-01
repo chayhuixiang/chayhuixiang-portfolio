@@ -1,13 +1,13 @@
 'use client';
 
 import React, { useRef, useState } from 'react'
-import Button from '../components/Button'
+import Button from '../../components/Button'
 import { EnvelopeOpenIcon } from '@heroicons/react/24/outline';
-import Linkedin from '../components/images/footer/Linkedin';
-import Github from '../components/images/footer/Github';
+import Linkedin from '../../components/images/footer/Linkedin';
+import Github from '../../components/images/footer/Github';
 import emailjs from '@emailjs/browser';
-import Spinner from '../components/images/contact/Spinner';
-import Done from '../components/images/contact/Done';
+import Spinner from '../../components/images/contact/Spinner';
+import Done from '../../components/images/contact/Done';
 
 type status = 'sending' | 'error' | 'sent' | 'idle'
 

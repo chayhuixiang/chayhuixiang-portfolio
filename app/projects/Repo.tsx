@@ -1,13 +1,20 @@
 'use client'
 import React, { useState } from 'react'
-import { Project } from '../../data/schema'
-import Button from '../components/Button'
-import RepoCard from '../components/RepoCard'
+// import { Project } from '../../data/schema'
+import { Project } from '@prisma/client'
+import Button from '../../components/Button'
+import RepoCard from '../../components/RepoCard'
 import { ChevronDownIcon } from '@heroicons/react/24/outline'
 import Menu from './Menu'
 
 type Props = {
-  projects: Project[]
+  projects: (Project & {
+    pushedAt: string
+    stacks: {
+      logo_path_light: string;
+      logo_path_dark: string;
+    }[]
+  })[]
 }
 
 type Options = 'All' | 'DSAI' | 'Web Dev.' | 'Cybersecurity' | 'Misc.'
@@ -68,8 +75,8 @@ const Repo = ({projects}: Props) => {
         </div>
       </div>
       <div className='mt-4 sm:mt-8 md:mt-20 grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-10 mb-3 sm:mb-10 w-[min(100%,400px)] sm:w-full'>
-        {displayedProjects.map(({name, colour, cover_path, deployed_link, repo, owner, logo_path_stack_light, logo_path_stack_dark}: Project, i) => 
-          <RepoCard key={i} variant={i === 0 && displayedProjects.length % 2 === 1 ? 'large' : 'small'} name={name} colour={colour} cover_path={cover_path} deployed_link={deployed_link} github_link={`https://github.com/${owner}/${repo}`} logo_path_stack_light={logo_path_stack_light} logo_path_stack_dark={logo_path_stack_dark} />)
+        {displayedProjects.map(({name, colour, cover_path, deployed_link, repo, owner, stacks }, i) => 
+          <RepoCard key={i} variant={i === 0 && displayedProjects.length % 2 === 1 ? 'large' : 'small'} name={name} colour={colour} cover_path={cover_path} deployed_link={deployed_link} github_link={`https://github.com/${owner}/${repo}`} stacks={stacks} />)
         }
       </div>
       <a href='https://github.com/chayhuixiang' target='_blank' rel='noopener noreferrer'>

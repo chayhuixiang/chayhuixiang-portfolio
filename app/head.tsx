@@ -15,6 +15,7 @@ export default function Head() {
       <title>Chay Hui Xiang</title>
       <meta content="width=device-width, initial-scale=1" name="viewport" />
       <link rel="icon" href="/favicon.ico" />
+      <link rel='manifest' href='/site.webmanifest' />
 
       <meta name="robots" content="index, follow" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />

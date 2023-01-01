@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useRef } from 'react'
-import useMounted from '../../hooks/useMounted'
+import useMounted from '../hooks/useMounted'
 import { useTheme } from 'next-themes'
 
 type Props = {
@@ -9,16 +9,18 @@ type Props = {
   position: string,
   logo_path_light: string,
   logo_path_dark: string,
-  start_date: string,
+  start_date: string
   end_date: string | null,
   description: string[],
-  logo_path_stack_light: string[],
-  logo_path_stack_dark: string[],
+  stacks: {
+    logo_path_light: string;
+    logo_path_dark: string;
+  }[],
   link: string,
   focus: boolean
 }
 
-const CompanyCard = ({name, position, logo_path_light, logo_path_dark, start_date, end_date, description, logo_path_stack_light, logo_path_stack_dark, link, focus}: Props) => {
+const CompanyCard = ({name, position, logo_path_light, logo_path_dark, start_date, end_date, description, stacks, link, focus}: Props) => {
   const mounted = useMounted();
   const { systemTheme, theme } = useTheme();
   const currentTheme = theme === 'system' ? systemTheme : theme;
@@ -36,7 +38,7 @@ const CompanyCard = ({name, position, logo_path_light, logo_path_dark, start_dat
           {new Date(start_date).toLocaleDateString('en-GB', { month: 'short', year: 'numeric'})} – {end_date === null ? 'Present' : new Date(end_date).toLocaleDateString('en-GB', { month: 'short', year: 'numeric'})}
         </h4>
         <div className='flex gap-3 self-center'>
-          {mounted && currentTheme === 'dark' ? logo_path_stack_dark.map((stack, i) => <img src={stack} key={i} alt='stack' width={40} />) : logo_path_stack_light.map((stack, i) => <img src={stack} key={i} alt='stack' width={40} />)}
+          {stacks.map(({logo_path_dark, logo_path_light}, i) => <img src={mounted && currentTheme === 'dark' ? logo_path_dark : logo_path_light} key={i} alt='stack' width={40} />)}
         </div>
         <ul className='text-xs'>
           {description.map((text, i) => <li key={i}>

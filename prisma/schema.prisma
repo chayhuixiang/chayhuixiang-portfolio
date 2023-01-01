@@ -1,0 +1,84 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "cockroachdb"
+  url      = env("DATABASE_URL")
+}
+
+model Skill {
+  name                String      @id
+  logo_path           String 
+  display_order       Int         @default(sequence())
+
+  stacks              Stack[]       
+}
+
+model Stack {
+  name                String      @id
+  logo_path_light     String
+  logo_path_dark      String
+  colour              String      
+  skill_work_order    Int         @default(0)
+
+  skill               Skill?       @relation(fields:[skill_name], references: [name])
+  skill_name          String?
+  skill_name_order    Int?
+
+  companies           Company[]
+
+  projects            Project[]
+}
+
+model Company {
+  name                String      @id
+  position            String
+  logo_path_light     String
+  logo_path_dark      String
+  start_date          DateTime
+  end_date            DateTime?
+  description         String[]
+  link                String
+
+  stacks              Stack[]
+}
+
+enum Project_Type {
+  webdev
+  dsai
+  cybersecurity
+  misc
+}
+
+model Project {
+  name                String      @id
+  featured            Boolean
+  type                Project_Type
+  logo_path           String
+  cover_path          String
+  colour              String
+  deployed_link       String?
+  description         String
+  repo                String
+  owner               String
+
+  stacks              Stack[]
+}
+
+model Achievement {
+  id                  String      @id @default(uuid())
+  cover_path_desktop  String
+  cover_path_mobile   String
+  logo_path           String
+  start_date          DateTime
+  end_date            DateTime?
+  year                Int
+  position            String
+  name                String
+  description         String
+  link                String
+}

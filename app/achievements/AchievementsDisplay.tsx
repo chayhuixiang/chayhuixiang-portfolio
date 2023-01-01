@@ -1,17 +1,31 @@
 'use client'
 
 import React, { useState, useRef, useEffect } from 'react'
-import { fetchedAchievements } from '../../data/achievement'
-import { Achievement } from '../../data/schema'
-import Button from '../components/Button'
+// import { fetchedAchievements } from '../../data/achievement'
+// import { Achievement } from '../../data/schema'
+import Button from '../../components/Button'
 import { motion } from 'framer-motion'
-import Portal from '../components/Portal'
+import Portal from '../../components/Portal'
 import { XMarkIcon } from '@heroicons/react/24/outline'
-import External from '../components/images/achievements/External'
+import External from '../../components/images/achievements/External'
 
-type Props = {}
+type Props = {
+  fetchedAchievements: {
+    end_date: string | null;
+    start_date: string;
+    id: string;
+    cover_path_desktop: string;
+    cover_path_mobile: string;
+    logo_path: string;
+    year: number;
+    position: string;
+    name: string;
+    description: string;
+    link: string;
+  }[]
+}
 
-const Achievements = (props: Props) => {
+const Achievements = ({ fetchedAchievements }: Props) => {
   const [selectedAchievement, setSelectedAchievement] = useState<string>('')
   const filteredAchievement = fetchedAchievements.find((achievement) => achievement.id === selectedAchievement);
 
@@ -36,7 +50,7 @@ const Achievements = (props: Props) => {
         <div className='hidden md:block w-[6.25rem] h-5 opacity-20 absolute bg-purple dark:bg-purple-light top-[1.75rem] left-[12rem]'/>
         <p className='mt-2 mb-7 hidden md:block'>Here is a list of my notable achievements.</p>
         <div className='flex flex-col flex-1 gap-3 md:gap-7 items-center md:items-start mt-3 md:mt-0'>
-        {fetchedAchievements.map(({ name, id, position, year, logo_path }: Achievement) => 
+        {fetchedAchievements.map(({ name, id, position, year, logo_path }) => 
           <div key={id} className='w-full'>
             <h3 className={`hidden md:block font-bold cursor-pointer hover:text-gunmetal dark:hover:text-white ${id === selectedAchievement ? 'text-gunmetal dark:text-white' : 'text-blue-dark dark:text-zinc-300'}`} onClick={() => setSelectedAchievement(id)}>
               {position}, {name} {year}
@@ -67,7 +81,7 @@ const Achievements = (props: Props) => {
                 </div>
                 <div className='flex flex-col'>
                   <p className='font-bold'>{filteredAchievement.position}</p>
-                  <p className='text-xs font-secondary'>{new Date(filteredAchievement.start_date).toLocaleDateString('en-GB', { month: 'short', year: 'numeric'})} – {new Date(filteredAchievement.end_date).toLocaleDateString('en-GB', { month: 'short', year: 'numeric'})}</p>
+                  <p className='text-xs font-secondary'>{new Date(filteredAchievement.start_date).toLocaleDateString('en-GB', { month: 'short', year: 'numeric'})} – {filteredAchievement.end_date === null ? 'Present' : new Date(filteredAchievement.end_date).toLocaleDateString('en-GB', { month: 'short', year: 'numeric'})}</p>
                 </div>
               </div>
               <p className='text-xs text-left mx-3'>{filteredAchievement.description.split('*').map((descriptionChunk, i) => ( i % 2 ? <strong key={i}>{descriptionChunk}</strong> : <span key={i}>{descriptionChunk}</span>))}</p>
@@ -86,7 +100,7 @@ const Achievements = (props: Props) => {
                 </div>
                 <div>
                   <h3 className='font-bold'>{filteredAchievement.position}</h3>
-                  <p className='text-sm font-secondary'>{filteredAchievement.name} | {new Date(filteredAchievement.start_date).toLocaleDateString('en-GB', { month: 'short', year: 'numeric'})} – {new Date(filteredAchievement.end_date).toLocaleDateString('en-GB', { month: 'short', year: 'numeric'})}</p>
+                  <p className='text-sm font-secondary'>{filteredAchievement.name} | {new Date(filteredAchievement.start_date).toLocaleDateString('en-GB', { month: 'short', year: 'numeric'})} – {filteredAchievement.end_date === null ? 'Present' : new Date(filteredAchievement.end_date).toLocaleDateString('en-GB', { month: 'short', year: 'numeric'})}</p>
                 </div>
               </div>
               <p className='text-xs'>{filteredAchievement.description.split('*').map((descriptionChunk, i) => ( i % 2 ? <strong key={i}>{descriptionChunk}</strong> : <span key={i}>{descriptionChunk}</span>))}</p>

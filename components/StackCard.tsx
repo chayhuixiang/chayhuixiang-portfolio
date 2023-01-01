@@ -2,15 +2,21 @@
 
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
+import { useTheme } from 'next-themes'
+import useMounted from '../hooks/useMounted'
 
 type Props = {
   'name': string,
-  'logo_path': string,
+  'logo_path_light': string,
+  'logo_path_dark': string,
   'colour': string,
 }
 
-const StackCard = ({name, logo_path, colour}: Props) => {
+const StackCard = ({name, logo_path_light, logo_path_dark, colour}: Props) => {
   const [hovered, setHovered] = useState<boolean>(false);
+  const mounted = useMounted();
+  const { systemTheme, theme } = useTheme();
+  const currentTheme = theme === 'system' ? systemTheme : theme;
 
   return (
     <motion.div 
@@ -24,7 +30,7 @@ const StackCard = ({name, logo_path, colour}: Props) => {
       }}
       whileTap={{ scale: 0.9 }}
     >
-      <img src={logo_path} alt='stack_logo' />
+      <img src={mounted && currentTheme === 'dark' ? logo_path_dark : logo_path_light} alt='stack_logo' />
       <p className='font-secondary text-xs'>{name}</p>
     </motion.div>
   )

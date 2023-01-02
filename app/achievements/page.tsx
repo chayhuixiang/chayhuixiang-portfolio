@@ -1,6 +1,9 @@
+import { Achievement } from '@prisma/client'
 import React from 'react'
 import AchievementsBackground from '../../components/images/achievements/AchievementsBackground'
-import { prisma } from '../../prisma/prisma'
+import { GET_ACHIEVEMENTS } from '../../graphql/queries'
+import { AchievementResponse } from '../../graphql/schema'
+import { graphqlClient } from '../../lib/graphqlClient'
 import AchievementsDisplay from './AchievementsDisplay'
 
 const Achievements = async () => {
@@ -17,13 +20,8 @@ const Achievements = async () => {
 }
 
 const fetchAchievements = async () => {
-  const fetchedAchievements = await prisma.achievement.findMany({
-    orderBy: {
-      start_date: 'asc'
-    }
-  });
-
-  return fetchedAchievements.map(e => ({...e, end_date: e.end_date === null ? null : e.end_date.toISOString(), start_date: e.start_date.toISOString() }));
+  const fetchedAchievements: { achievements: AchievementResponse[] } = await graphqlClient.request(GET_ACHIEVEMENTS);
+  return fetchedAchievements.achievements;
 }
 
 export default Achievements

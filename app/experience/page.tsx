@@ -1,7 +1,10 @@
 import React from 'react'
 import StackGroup from './StackGroup'
 import CompanyGroup from './CompanyGroup'
-import { prisma } from '../../prisma/prisma'
+import { graphqlClient } from '../../lib/graphqlClient'
+import { GET_COMPANIES, GET_WORK_STACKS } from '../../graphql/queries'
+import { Stack } from '@prisma/client'
+import { CompanyResponse } from '../../graphql/schema'
 
 const Experience = async () => {
   const sortedCompanies = await fetchCompanies();
@@ -24,35 +27,13 @@ const Experience = async () => {
 }
 
 const fetchCompanies = async () => {
-  const fetchedCompanies = await prisma.company.findMany({
-    orderBy: {
-      start_date: 'asc'
-    },
-    include: {
-      stacks: {
-        select: {
-          logo_path_dark: true,
-          logo_path_light: true
-        }
-      }
-    }
-  });
-
-  return fetchedCompanies.map(e => ({ ...e, start_date: e.start_date.toISOString(), end_date: e.end_date === null ? null : e.end_date.toISOString() }));
+  const fetchedCompanies: {companies: CompanyResponse[]} = await graphqlClient.request(GET_COMPANIES);
+  return fetchedCompanies.companies;
 }
 
 const fetchWorkStacks = async () => {
-  const fetchedStacks = await prisma.stack.findMany({
-    where: {
-      skill_work_order: {
-        gt: 0
-      }
-    },
-    orderBy: {
-      skill_work_order: 'asc'
-    }
-  });
-  return fetchedStacks
+  const fetchedStacks: {stacks: Stack[]} = await graphqlClient.request(GET_WORK_STACKS);
+  return fetchedStacks.stacks
 }
 
 export default Experience

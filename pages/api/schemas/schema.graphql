@@ -1,0 +1,78 @@
+type Company {
+  name: String!
+  position: String!
+  logo_path_light: String!
+  logo_path_dark: String!
+  start_date: DateTime!
+  end_date: DateTime
+  description: [String]
+  link: String!
+
+  stacks: [Stack]!
+}
+
+type Stack {
+  name: String!
+  logo_path_light: String!
+  logo_path_dark: String!
+  colour: String!
+  skill_work_order: Int!
+  skill_name: String
+  skill_name_order: Int
+}
+
+type Skill {
+  name: String!
+  logo_path: String!
+  display_order: Int!
+  stacks: [Stack]!
+}
+
+enum Project_Type {
+  webdev
+  dsai
+  cybersecurity
+  misc
+}  
+
+type Project {
+  name: String
+  featured: Boolean
+  type: Project_Type
+  logo_path: String
+  cover_path: String
+  colour: String
+  deployed_link: String
+  description: String!
+  repo: String!
+  owner: String!
+
+  stacks: [Stack]!
+}
+
+type Achievement {
+  id: String!
+  cover_path_desktop: String!
+  cover_path_mobile: String!
+  logo_path: String!
+  start_date: DateTime!
+  end_date: DateTime
+  year: Int!
+  position: String!
+  name: String!
+  description: String!
+  link: String!
+}
+
+type Query {
+  skills: [Skill]!
+  skill(name: String!): Skill
+  stacks(work: Boolean!): [Stack]!
+  stack(name: String!): Stack
+  companies: [Company]!
+  company(name: String!): Company
+  projects: [Project]!
+  project(name: String!): Project
+  achievements: [Achievement]!
+  achievement(id: String!): Achievement
+}

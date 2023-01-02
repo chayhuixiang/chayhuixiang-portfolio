@@ -4,8 +4,10 @@ import React from 'react'
 import { graphql, GraphQlQueryResponseData } from '@octokit/graphql'
 import ProjectCard from '../../components/ProjectCard';
 import Repo from './Repo';
-import { prisma } from '../../prisma/prisma';
 import { Project } from '@prisma/client';
+import { graphqlClient } from '../../lib/graphqlClient';
+import { GET_PROJECTS } from '../../graphql/queries';
+import { ProjectResponse } from '../../graphql/schema';
 
 type FetchedProject = (Project & {
   stacks: {
@@ -78,17 +80,8 @@ const sortProjects = async (fetchedProjects: FetchedProject[]) => {
 }
 
 const fetchProjects = async () => {
-  const fetchedProjects = await prisma.project.findMany({
-    include: {
-      stacks: {
-        select: {
-          logo_path_dark: true,
-          logo_path_light: true
-        }
-      }
-    }
-  });
-  return fetchedProjects;
+  const fetchedProjects: { projects: ProjectResponse[] } = await graphqlClient.request(GET_PROJECTS);
+  return fetchedProjects.projects;
 }
 
 export default Projects

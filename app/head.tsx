@@ -27,6 +27,8 @@ export default function Head() {
       <meta property="og:image" content={seo.image} />
       <meta property="og:url" content={seo.url} />
       <meta property="og:type" content="website" />
+
+      <meta property="keywords" content="Software Engineer, Full-Stack Engineer, Software Developer, Chay Hui Xiang" />
       
       <meta property="" />
       <meta property="keywords" content="Full-stack Developer, Software Developer, Crystal Cheong"></meta>

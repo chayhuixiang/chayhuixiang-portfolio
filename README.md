@@ -33,3 +33,5 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 3. Framer-motion
 4. Prisma
 5. CockroachDB
+6. GraphQL
+7. Apollo

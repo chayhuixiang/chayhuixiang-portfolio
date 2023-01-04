@@ -98,10 +98,15 @@ const Contact = () => {
       }
 
       if (serviceId && templateId && publicKey && ref.current && executeRecaptcha) {
+        const response = await fetch('/api/limiter');
+        if (!response.ok) {
+          throw new ContactError("You have sent too many requests", ["submit"]);
+        }
+
         const gReCaptchaToken = await executeRecaptcha("contact");
         await submitRecaptcha(gReCaptchaToken, name, email, message, theme);
 
-        // await emailjs.sendForm(serviceId, templateId, ref.current, publicKey);
+        await emailjs.sendForm(serviceId, templateId, ref.current, publicKey);
 
         setName("");
         setEmail("");
@@ -119,6 +124,8 @@ const Contact = () => {
       } else if (error instanceof ContactError) {
         status.content = <ErrorComponent message={error.message} />;
         status.target = error.target;
+      } else if (error instanceof Error) {
+        status.content = <ErrorComponent message={error.message} />;
       }
       setStatus(status);
     }
@@ -132,7 +139,7 @@ const Contact = () => {
         <input type='email' className={`bg-zinc-100 dark:bg-purple-dark rounded-lg md:p-[0.625rem] p-2 text-sm md:text-base outline-none dark:placeholder-purple-light ${status.target?.includes('email') && 'outline-red-500'}`} name='text_Email' placeholder='Email' value={email} onChange={emailInputHandler} />
         <input type='text' className={`col-span-2 bg-zinc-100 dark:bg-purple-dark rounded-lg md:p-[0.625rem] p-2 text-sm md:text-base outline-none dark:placeholder-purple-light ${status.target?.includes('theme') && 'outline-red-500'}`} name='text_Theme' placeholder='Subject' value={theme} onChange={themeInputHandler} />
         <textarea rows={5} className={`col-span-2 bg-zinc-100 dark:bg-purple-dark rounded-lg md:p-[0.625rem] p-2 text-sm md:text-base outline-none resize-none dark:placeholder-purple-light ${status.target?.includes('message') && 'outline-red-500'}`} name='text_Message' placeholder='Message' value={message} onChange={messageInputHandler} />
-        <Button className='shadow-lg h-[2.625rem] col-span-2 justify-center' type='solid' colour='purple' onClick={() => ref.current?.dispatchEvent(new Event('submit'))}>
+        <Button className='shadow-lg h-[2.625rem] col-span-2 justify-center' disabled={status.target?.includes('submit')} type='solid' colour='purple' onClick={() => ref.current?.dispatchEvent(new Event('submit'))}>
           {
             typeof status.content === 'string' ?  <p className='font-bold m-auto text-sm sm:text-base'>{status.content}</p> :
             status.content

@@ -10,6 +10,7 @@ type ReCaptChaResponse = {
 }
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
+
   if (req.method === "POST") {
     try {
       const response = await fetch(`https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${req.body.gReCaptchaToken}`, {
@@ -25,7 +26,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         status: "success"
       })
     } catch (err) {
-      res.status(405).json({
+      res.status(400).json({
         status: "failure",
         message: "Error submitting the enquiry form",
       });

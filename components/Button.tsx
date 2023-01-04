@@ -7,10 +7,11 @@ type Props = {
   children: React.ReactNode,
   className?: string,
   type: "solid" | "outline" | "no",
-  colour: "purple" | "blue-dark"
+  colour: "purple" | "blue-dark",
+  disabled?: boolean
 }
 
-const Button = ({ onClick, children, className, type, colour }: Props) => {
+const Button = ({ onClick, children, className, type, colour, disabled }: Props) => {
   let colourStyle = '';
   if (type === 'solid') {
     if (colour === 'purple') {
@@ -30,7 +31,7 @@ const Button = ({ onClick, children, className, type, colour }: Props) => {
   }
 
   return (
-    <button className={`h-12 flex px-4 items-center rounded-lg transition-all duration-200 ${className} ${colourStyle}`} onClick={onClick}>
+    <button disabled={disabled} className={`h-12 flex px-4 items-center rounded-lg transition-all duration-200 ${className} ${colourStyle}`} onClick={onClick}>
       {children}
     </button>
   )

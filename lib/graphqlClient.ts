@@ -1,6 +1,7 @@
 import { GraphQLClient } from "graphql-request";
 import { getAbsoluteUrl } from "../utils/getAbsoluteUrl";
 
-console.log(getAbsoluteUrl());
-const GQL_ENDPOINT = process.env.NODE_ENV !== 'production' ? 'http://localhost:3000/api/graphql' : 'https://chayhuixiang-portfolio.vercel.app/api/graphql';
+// const GQL_ENDPOINT = process.env.NODE_ENV !== 'production' ? 'http://localhost:3000/api/graphql' : 'https://chayhuixiang-portfolio.vercel.app/api/graphql';
+const absoluteUrl = getAbsoluteUrl();
+const GQL_ENDPOINT = `${absoluteUrl}/api/graphql`
 export const graphqlClient = new GraphQLClient(GQL_ENDPOINT);

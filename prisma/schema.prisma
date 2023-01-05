@@ -23,15 +23,35 @@ model Stack {
   logo_path_light     String
   logo_path_dark      String
   colour              String      
-  skill_work_order    Int         @default(0)
+  stack_work_order    Int         @default(0)
 
-  skill               Skill?       @relation(fields:[skill_name], references: [name])
+  skill               Skill?      @relation(fields:[skill_name], references: [name])
   skill_name          String?
-  skill_name_order    Int?
+  stack_skill_order   Int?
 
-  companies           Company[]
+  companies           StacksOnCompanies[]
 
-  projects            Project[]
+  projects            StacksOnProjects[]
+}
+
+model StacksOnProjects {
+  stack               Stack       @relation(fields: [stack_name], references: [name])
+  stack_name          String
+  project             Project     @relation(fields: [project_name], references: [name])
+  project_name        String
+  stack_project_order Int
+
+  @@id([stack_name, project_name])
+}
+
+model StacksOnCompanies {
+  stack               Stack       @relation(fields: [stack_name], references: [name])
+  stack_name          String
+  company             Company     @relation(fields: [company_name], references: [name])
+  company_name        String
+  stack_company_order Int
+
+  @@id([stack_name, company_name])
 }
 
 model Company {
@@ -44,7 +64,7 @@ model Company {
   description         String[]
   link                String
 
-  stacks              Stack[]
+  stacks              StacksOnCompanies[]
 }
 
 enum Project_Type {
@@ -66,7 +86,7 @@ model Project {
   repo                String
   owner               String
 
-  stacks              Stack[]
+  stacks              StacksOnProjects[]
 }
 
 model Achievement {

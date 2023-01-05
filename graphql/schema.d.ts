@@ -17,15 +17,19 @@ export type CompanyResponse = ({
   link: string;
 } & {
   stacks: {
+    stack: {
       logo_path_light: string;
       logo_path_dark: string;
+    }
   }[];
 })
 
 export type ProjectResponse = (Project & {
   stacks: {
+    stack: {
       logo_path_light: string;
       logo_path_dark: string;
+    }
   }[];
 })
 

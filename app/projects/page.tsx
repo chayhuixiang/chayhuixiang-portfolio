@@ -4,20 +4,12 @@ import React from 'react'
 import { graphql, GraphQlQueryResponseData } from '@octokit/graphql'
 import ProjectCard from '../../components/ProjectCard';
 import Repo from './Repo';
-import { Project } from '@prisma/client';
 import { graphqlClient } from '../../lib/graphqlClient';
 import { GET_PROJECTS } from '../../graphql/queries';
 import { ProjectResponse } from '../../graphql/schema';
 
-type FetchedProject = (Project & {
-  stacks: {
-      logo_path_light: string;
-      logo_path_dark: string;
-  }[];
-});
-
 const Projects = async () => {
-  const fetchedProjects: FetchedProject[] = await fetchProjects();
+  const fetchedProjects: ProjectResponse[] = await fetchProjects();
   const [featuredProjects, unfeaturedProjects] = await sortProjects(fetchedProjects);
   return (
     <main>
@@ -38,7 +30,7 @@ const Projects = async () => {
   )
 }
 
-const sortProjects = async (fetchedProjects: FetchedProject[]) => {
+const sortProjects = async (fetchedProjects: ProjectResponse[]) => {
   const graphqlWithAuth = graphql.defaults({
     headers: {
       authorization: `token ${process.env.GH_PAT}`,
@@ -52,7 +44,7 @@ const sortProjects = async (fetchedProjects: FetchedProject[]) => {
   query += '}'
   const result = await graphqlWithAuth<GraphQlQueryResponseData>(query);
 
-  const fetchedProjectsWithResults: (FetchedProject & {pushedAt: string})[] = fetchedProjects.map((project, i) => ({
+  const fetchedProjectsWithResults: (ProjectResponse & {pushedAt: string})[] = fetchedProjects.map((project, i) => ({
     ...project,
     ...result[`repo${i}`]
   }));

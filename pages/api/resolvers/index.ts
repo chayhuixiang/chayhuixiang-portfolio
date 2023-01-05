@@ -9,7 +9,7 @@ export const resolvers = {
       include: {
         stacks: {
           orderBy: {
-            skill_name_order: 'asc'
+            stack_skill_order: 'asc'
           }
         }
       }
@@ -21,19 +21,19 @@ export const resolvers = {
       include: {
         stacks: {
           orderBy: {
-            skill_name_order: 'asc'
+            stack_skill_order: 'asc'
           }
         }
       }
     }),
     stacks: async (_: any, { work }: { work: boolean }, { prisma }: { prisma: PrismaClient }) => await prisma.stack.findMany({
       where: work ? {
-        skill_work_order: {
+        stack_work_order: {
           gt: 0
         }
       } : {},
       orderBy: {
-        skill_work_order: 'asc'
+        stack_work_order: 'asc'
       }
     }),
     stack: async (_: any, { name }: { name: string }, { prisma }: { prisma: PrismaClient }) => await prisma.stack.findUnique({
@@ -46,7 +46,14 @@ export const resolvers = {
         start_date: 'asc'
       },
       include: {
-        stacks: true
+        stacks: {
+          include: {
+            stack: true
+          },
+          orderBy: {
+            stack_company_order: 'asc'
+          }
+        }
       }
     }),
     company: async (_: any, { name }: { name: string }, { prisma }: { prisma: PrismaClient }) => await prisma.company.findUnique({
@@ -54,17 +61,41 @@ export const resolvers = {
         name
       },
       include: {
-        stacks: true
+        stacks: {
+          include: {
+            stack: true
+          },
+          orderBy: {
+            stack_company_order: 'asc'
+          }
+        }
       }
     }),
     projects: async (_: any, __: any, { prisma }: { prisma: PrismaClient }) => await prisma.project.findMany({
       include: {
-        stacks: true
+        stacks: {
+          include: {
+            stack: true
+          },
+          orderBy: {
+            stack_project_order: 'asc'
+          }
+        }
       }
     }),
     project: async (_: any, { name }: { name: string }, { prisma }: { prisma: PrismaClient }) => await prisma.project.findUnique({
       where: {
         name
+      },
+      include: {
+        stacks: {
+          include: {
+            stack: true
+          },
+          orderBy: {
+            stack_project_order: 'asc'
+          }
+        }
       }
     }),
     achievements: async (_: any, __: any, { prisma }: { prisma: PrismaClient }) => await prisma.achievement.findMany({

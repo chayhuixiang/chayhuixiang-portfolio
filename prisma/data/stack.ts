@@ -6,19 +6,26 @@ export const stacks = [
     'logo_path_light': '/images/stack/arduino.svg',
     'logo_path_dark': '/images/stack/arduino-dark.svg',
     'colour': '#01A3A9',
-    'skill_work_order': 1,
+    'stack_work_order': 1,
 
     'skill': {
       connect: {
         'name': 'Firmware Development'
-      }
+      },
     },
-    'skill_name_order': 1,
+    'stack_skill_order': 1,
 
     'companies': {
-      connect: {
-        'name': 'Trilogy Technologies'
-      }
+      create: [
+        {
+          'stack_company_order': 1,
+          'company': {
+            connect: {
+              'name': 'Trilogy Technologies'
+            }
+          }
+        }
+      ]
     }
   },
   {
@@ -26,28 +33,45 @@ export const stacks = [
     'logo_path_light': '/images/stack/firebase.svg',
     'logo_path_dark': '/images/stack/firebase-dark.svg',
     'colour': '#FFA000',
-    'skill_work_order': 2,
+    'stack_work_order': 2,
 
     'skill': {
       connect: {
         'name': 'Backend Development'
       }
     },
-    'skill_name_order': 6,
+    'stack_skill_order': 6,
 
     'companies': {
-      connect: {
-        'name': 'Trilogy Technologies'
-      }
+      create: [
+        {
+          'stack_company_order': 2,
+          'company': {
+            connect: {
+              'name': 'Trilogy Technologies'
+            }
+          }
+        }
+      ]
     },
 
     'projects': {
-      connect: [
+      create: [
         {
-          'name': 'TwoTyred'
+          'stack_project_order': 5,
+          'project': {
+            connect: {
+              'name': 'TwoTyred'
+            }
+          }
         },
         {
-          'name': 'ModusPonens'
+          'stack_project_order': 5,
+          'project': {
+            connect: {
+              'name': 'ModusPonens'
+            }
+          }
         }
       ]
     }
@@ -57,40 +81,77 @@ export const stacks = [
     'logo_path_light': '/images/stack/react.svg',
     'logo_path_dark': '/images/stack/react-dark.svg',
     'colour': '#80DEEA',
-    'skill_work_order': 3,
+    'stack_work_order': 3,
 
     'skill': {
       connect: {
         'name': 'Frontend Development'
       }
     },
-    'skill_name_order': 5,
+    'stack_skill_order': 5,
 
     'companies': {
-      connect: {
-        'name': 'Switcheo Labs'
-      }
+      create: [
+        {
+          'stack_company_order': 1,
+          'company': {
+            connect: {
+              'name': 'Switcheo Labs'
+            }
+          }
+        }
+      ]
     },
 
     'projects': {
-      connect: [
+      create: [
         {
-          'name': 'TwoTyred'
+          'stack_project_order': 1,
+          'project': {
+            connect: {
+              'name': 'TwoTyred'
+            }
+          }
         },
         {
-          'name': 'CraiyoNFT'
+          'stack_project_order': 1,
+          'project': {
+            connect: {
+              'name': 'CraiyoNFT'
+            }
+          }
         },
         {
-          'name': 'Makers Attendance'
+          'stack_project_order': 2,
+          'project': {
+            connect: {
+              'name': 'Makers Attendance'
+            }
+          }
         },
         {
-          'name': 'Redux Counter'
+          'stack_project_order': 1,
+          'project': {
+            connect: {
+              'name': 'Redux Counter'
+            }
+          }
         },
         {
-          'name': 'Reach Induction'
+          'stack_project_order': 2,
+          'project': {
+            connect: {
+              'name': 'Reach Induction'
+            }
+          }
         },
         {
-          'name': 'Moving Scenery'
+          'stack_project_order': 1,
+          'project': {
+            connect: {
+              'name': 'Moving Scenery'
+            }
+          }
         }
       ]
     }
@@ -100,19 +161,26 @@ export const stacks = [
     'logo_path_light': '/images/stack/typescript.svg',
     'logo_path_dark': '/images/stack/typescript-dark.svg',
     'colour': '#1976D2',
-    'skill_work_order': 4,
+    'stack_work_order': 4,
 
     'skill': {
       connect: {
         'name': 'Frontend Development'
       }
     },
-    'skill_name_order': 4,
+    'stack_skill_order': 4,
 
     'companies': {
-      connect: {
-        'name': 'Switcheo Labs'
-      }
+      create: [
+        {
+          'stack_company_order': 2,
+          'company': {
+            connect: {
+              'name': 'Switcheo Labs'
+            }
+          }
+        }
+      ]
     }
   },
   {
@@ -120,26 +188,38 @@ export const stacks = [
     'logo_path_light': '/images/stack/redux.svg',
     'logo_path_dark': '/images/stack/redux-dark.svg',
     'colour': '#7E57C2',
-    'skill_work_order': 5,
+    'stack_work_order': 5,
 
     'skill': {
       connect: {
         'name': 'Frontend Development'
       }
     },
-    'skill_name_order': 9,
+    'stack_skill_order': 9,
 
     'companies': {
-      connect: {
-        'name': 'Switcheo Labs'
-      }
+      create: [
+        {
+          'stack_company_order': 4,
+          'company': {
+            connect: {
+              'name': 'Switcheo Labs'
+            }
+          }
+        }
+      ]
     },
 
     'projects': {
-      connect: [
+      create: [
         {
-          'name': 'Redux Counter'
-        },
+          'stack_project_order': 2,
+          'project': {
+            connect: {
+              'name': 'Redux Counter'
+            },
+          }
+        }
       ]
     }
   },
@@ -148,19 +228,26 @@ export const stacks = [
     'logo_path_light': '/images/stack/git.svg',
     'logo_path_dark': '/images/stack/git-dark.svg',
     'colour': '#F4511E',
-    'skill_work_order': 6,
+    'stack_work_order': 6,
 
     'skill': {
       connect: {
         'name': 'DevOps'
       }
     },
-    'skill_name_order': 1,
+    'stack_skill_order': 1,
 
     'companies': {
-      connect: {
-        'name': 'Switcheo Labs'
-      }
+      create: [
+        {
+          'stack_company_order': 5,
+          'company': {
+            connect: {
+              'name': 'Switcheo Labs'
+            }
+          }
+        }
+      ]
     }
   },
   {
@@ -168,22 +255,39 @@ export const stacks = [
     'logo_path_light': '/images/stack/ethereum.svg',
     'logo_path_dark': '/images/stack/ethereum-dark.svg',
     'colour': '#1A237E',
-    'skill_work_order': 7,
+    'stack_work_order': 7,
 
     'companies': {
-      connect: [{
-        'name': 'Switcheo Labs'
-      },
-      {
-        'name': 'Tezos (TZ APAC)'
-      }]
+      create: [
+        {
+          'stack_company_order': 1,
+          'company': {
+            connect: {
+              'name': 'Switcheo Labs'
+            }
+          }
+        },
+        {
+          'stack_company_order': 1,
+          'company': {
+            connect: {
+              'name': 'Tezos (TZ APAC)'
+            }
+          }
+        }
+      ]
     },
 
     'projects': {
-      connect: [
+      create: [
         {
-          'name': 'CTF'
-        },
+          'stack_project_order': 1,
+          'project': {
+            connect: {
+              'name': 'CTF'
+            }
+          }
+        }
       ]
     }
   },
@@ -192,25 +296,37 @@ export const stacks = [
     'logo_path_light': '/images/stack/tensorflow.svg',
     'logo_path_dark': '/images/stack/tensorflow-dark.svg',
     'colour': '#FFA000',
-    'skill_work_order': 8,
+    'stack_work_order': 8,
 
     'skill': {
       connect: {
         'name': 'Machine Learning and Data Analytics'
       }
     },
-    'skill_name_order': 1,
+    'stack_skill_order': 1,
 
     'companies': {
-      connect: {
-        'name': 'Fisher8 Capital'
-      }
+      create: [
+        {
+          'stack_company_order': 1,
+          'company': {
+            connect: {
+              'name': 'Fisher8 Capital'
+            }
+          }
+        }
+      ]
     },
 
     'projects': {
-      connect: [
+      create: [
         {
-          'name': 'Image Classification'
+          'stack_project_order': 4,
+          'project': {
+            connect: {
+              'name': 'Image Classification'
+            }
+          }
         }
       ]
     }
@@ -220,31 +336,53 @@ export const stacks = [
     'logo_path_light': '/images/stack/pandas.svg',
     'logo_path_dark': '/images/stack/pandas-dark.svg',
     'colour': '#1A237E',
-    'skill_work_order': 9,
+    'stack_work_order': 9,
     
     'skill': {
       connect: {
         'name': 'Machine Learning and Data Analytics'
       }
     },
-    'skill_name_order': 4,
+    'stack_skill_order': 4,
 
     'companies': {
-      connect: {
-        'name': 'Fisher8 Capital'
-      }
+      create: [
+        {
+          'stack_company_order': 2,
+          'company': {
+            connect: {
+              'name': 'Fisher8 Capital'
+            }
+          }
+        },
+      ]
     },
 
     'projects': {
-      connect: [
+      create: [
         {
-          'name': 'SF Pokemon Spawns',
+          'stack_project_order': 1,
+          'project': {
+            connect: {
+              'name': 'SF Pokemon Spawns'
+            }
+          }
         },
         {
-          'name': 'DAC 2022'
+          'stack_project_order': 1,
+          'project': {
+            connect: {
+              'name': 'DAC 2022'
+            }
+          }
         },
         {
-          'name': 'Image Classification'
+          'stack_project_order': 1,
+          'project': {
+            connect: {
+              'name': 'Image Classification'
+            }
+          }
         }
       ]
     }
@@ -258,10 +396,15 @@ export const stacks = [
     'colour': '#FFC107',
 
     'projects': {
-      connect: [
+      create: [
         {
-          'name': 'Set with Friends Solver'
-        },
+          'stack_project_order': 1,
+          'project': {
+            connect: {
+              'name': 'Set with Friends Solver'
+            }
+          }
+        }
       ]
     }
   },
@@ -272,9 +415,14 @@ export const stacks = [
     'colour': '#F44336',
 
     'projects': {
-      connect: [
+      create: [
         {
-          'name': 'MOBLIMA'
+          'stack_project_order': 1,
+          'project': {
+            connect: {
+              'name': 'MOBLIMA'
+            }
+          }
         }
       ]
     }
@@ -286,12 +434,17 @@ export const stacks = [
     'colour': '#B7835A',
 
     'projects': {
-      connect: [
+      create: [
         {
-          'name': 'Block Shuffle'
-        },
+          'stack_project_order': 1,
+          'project': {
+            connect: {
+              'name': 'Block Shuffle'
+            }
+          }
+        }
       ]
-    },
+    }
   },
   {
     'name': 'IPFS', 
@@ -300,10 +453,15 @@ export const stacks = [
     'colour': '#449294',
 
     'projects': {
-      connect: [
+      create: [
         {
-          'name': 'CraiyoNFT'
-        },
+          'stack_project_order': 4,
+          'project': {
+            connect: {
+              'name': 'CraiyoNFT'
+            },
+          }
+        }
       ]
     }
   },
@@ -314,10 +472,15 @@ export const stacks = [
     'colour': '#FF3E00',
 
     'projects': {
-      connect: [
+      create: [
         {
-          'name': 'Makers Attendance'
-        },
+          'stack_project_order': 1,
+          'project': {
+            connect: {
+              'name': 'Makers Attendance'
+            },
+          }
+        }
       ]
     }
   },
@@ -334,13 +497,18 @@ export const stacks = [
         'name': 'Frontend Development', 
       }
     },
-    'skill_name_order': 1,
+    'stack_skill_order': 1,
 
     'projects': {
-      connect: [
+      create: [
         {
-          'name': 'Reach Induction'
-        },
+          'stack_project_order': 1,
+          'project': {
+            connect: {
+              'name': 'Reach Induction'
+            }
+          }
+        }
       ]
     }
   },
@@ -355,7 +523,7 @@ export const stacks = [
         'name': 'Frontend Development', 
       }
     },
-    'skill_name_order': 2
+    'stack_skill_order': 2
   },
   {
     'name': 'Javascript', 
@@ -368,16 +536,26 @@ export const stacks = [
         'name': 'Frontend Development', 
       }
     },
-    'skill_name_order': 3,
+    'stack_skill_order': 3,
 
     'projects': {
-      connect: [
+      create: [
         {
-          'name': 'Discord Carebot'
+          'stack_project_order': 1,
+          'project': {
+            connect: {
+              'name': 'Discord Carebot'
+            }
+          }
         },
         {
-          'name': 'Telegram Carebot'
-        },
+          'stack_project_order': 1,
+          'project': {
+            connect: {
+              'name': 'Telegram Carebot'
+            }
+          }
+        }
       ]
     }
   },
@@ -392,13 +570,18 @@ export const stacks = [
         'name': 'Frontend Development', 
       }
     },
-    'skill_name_order': 6,
+    'stack_skill_order': 6,
 
     'projects': {
-      connect: [
+      create: [
         {
-          'name': 'ModusPonens'
-        },
+          'stack_project_order': 1,
+          'project': {
+            connect: {
+              'name': 'ModusPonens'
+            }
+          }
+        }
       ]
     }
   },
@@ -413,7 +596,7 @@ export const stacks = [
         'name': 'Frontend Development', 
       }
     },
-    'skill_name_order': 7
+    'stack_skill_order': 7
   },
   {
     'name': 'Tailwind', 
@@ -426,18 +609,33 @@ export const stacks = [
         'name': 'Frontend Development', 
       }
     },
-    'skill_name_order': 8,
+    'stack_skill_order': 8,
 
     'projects': {
-      connect: [
+      create: [
         {
-          'name': 'TwoTyred'
+          'stack_project_order': 2,
+          'project': {
+            connect: {
+              'name': 'TwoTyred'
+            }
+          }
         },
         {
-          'name': 'ModusPonens'
+          'stack_project_order': 2,
+          'project': {
+            connect: {
+              'name': 'ModusPonens'
+            }
+          }
         },
         {
-          'name': 'Moving Scenery'
+          'stack_project_order': 2,
+          'project': {
+            connect: {
+              'name': 'Moving Scenery'
+            }
+          }
         }
       ]
     }
@@ -453,7 +651,7 @@ export const stacks = [
         'name': 'Backend Development', 
       }
     },
-    'skill_name_order': 1
+    'stack_skill_order': 1
   },
   {
     'name': 'Express', 
@@ -466,28 +664,58 @@ export const stacks = [
         'name': 'Backend Development', 
       }
     },
-    'skill_name_order': 2,
+    'stack_skill_order': 2,
 
     'projects': {
-      connect: [
+      create: [
         {
-          'name': 'TwoTyred'
+          'stack_project_order': 3,
+          'project': {
+            connect: {
+              'name': 'TwoTyred'
+            }
+          }
         },
         {
-          'name': 'CraiyoNFT'
+          'stack_project_order': 2,
+          'project': {
+            connect: {
+              'name': 'CraiyoNFT'
+            }
+          }
         },
         {
-          'name': 'Makers Attendance'
+          'stack_project_order': 3,
+          'project': {
+            connect: {
+              'name': 'Makers Attendance'
+            }
+          }
         },
         {
-          'name': 'Reach Induction'
+          'stack_project_order': 3,
+          'project': {
+            connect: {
+              'name': 'Reach Induction'
+            }
+          }
         },
         {
-          'name': 'Discord Carebot'
+          'stack_project_order': 2,
+          'project': {
+            connect: {
+              'name': 'Discord Carebot'
+            }
+          }
         },
         {
-          'name': 'Telegram Carebot'
-        },
+          'stack_project_order': 2,
+          'project': {
+            connect: {
+              'name': 'Telegram Carebot'
+            }
+          }
+        }
       ]
     }
   },
@@ -502,15 +730,25 @@ export const stacks = [
         'name': 'Backend Development', 
       }
     },
-    'skill_name_order': 3,
+    'stack_skill_order': 3,
 
     'projects': {
-      connect: [
+      create: [
         {
-          'name': 'TwoTyred'
+          'stack_project_order': 4,
+          'project': {
+            connect: {
+              'name': 'TwoTyred'
+            }
+          }
         },
         {
-          'name': 'ModusPonens'
+          'stack_project_order': 3,
+          'project': {
+            connect: {
+              'name': 'ModusPonens'
+            }
+          }
         }
       ]
     }
@@ -526,7 +764,7 @@ export const stacks = [
         'name': 'Backend Development', 
       }
     },
-    'skill_name_order': 4
+    'stack_skill_order': 4
   },
   {
     'name': 'MongoDB', 
@@ -539,7 +777,7 @@ export const stacks = [
         'name': 'Backend Development', 
       }
     },
-    'skill_name_order': 5
+    'stack_skill_order': 5
   },
   {
     'name': 'PyTorch', 
@@ -552,13 +790,18 @@ export const stacks = [
         'name': 'Machine Learning and Data Analytics',
       }
     },
-    'skill_name_order': 2,
+    'stack_skill_order': 2,
 
     'projects': {
-      connect: [
+      create: [
         {
-          'name': 'ModusPonens'
-        },
+          'stack_project_order': 4,
+          'project': {
+            connect: {
+              'name': 'ModusPonens'
+            },
+          }
+        }
       ]
     }
   },
@@ -573,13 +816,18 @@ export const stacks = [
         'name': 'Machine Learning and Data Analytics',
       }
     },
-    'skill_name_order': 3,
+    'stack_skill_order': 3,
 
     'projects': {
-      connect: [
+      create: [
         {
-          'name': 'Set with Friends Solver'
-        },
+          'stack_project_order': 2,
+          'project': {
+            connect: {
+              'name': 'Set with Friends Solver'
+            }
+          }
+        }
       ]
     }
   },
@@ -594,18 +842,33 @@ export const stacks = [
         'name': 'Machine Learning and Data Analytics', 
       }
     },
-    'skill_name_order': 5,
+    'stack_skill_order': 5,
 
     'projects': {
-      connect: [
+      create: [
         {
-          'name': 'SF Pokemon Spawns'
+          'stack_project_order': 3,
+          'project': {
+            connect: {
+              'name': 'SF Pokemon Spawns'
+            }
+          }
         },
         {
-          'name': 'DAC 2022'
+          'stack_project_order': 3,
+          'project': {
+            connect: {
+              'name': 'DAC 2022'
+            }
+          }
         },
         {
-          'name': 'Image Classification'
+          'stack_project_order': 3,
+          'project': {
+            connect: {
+              'name': 'Image Classification'
+            }
+          }
         }
       ]
     }
@@ -621,24 +884,46 @@ export const stacks = [
         'name': 'Machine Learning and Data Analytics', 
       }
     },
-    'skill_name_order': 6,
+    'stack_skill_order': 6,
 
     'companies': {
-      connect: {
-        'name': 'Fisher8 Capital'
-      }
+      create: [
+        {
+          'stack_company_order': 3,
+          'company': {
+            connect: {
+              'name': 'Fisher8 Capital'
+            }
+          }
+        }
+      ]
     },
 
     'projects': {
-      connect: [
+      create: [
         {
-          'name': 'SF Pokemon Spawns',
+          'stack_project_order': 2,
+          'project': {
+            connect: {
+              'name': 'SF Pokemon Spawns'
+            }
+          }
         },
         {
-          'name': 'DAC 2022'
+          'stack_project_order': 2,
+          'project': {
+            connect: {
+              'name': 'DAC 2022'
+            }
+          }
         },
         {
-          'name': 'Image Classification'
+          'stack_project_order': 2,
+          'project': {
+            connect: {
+              'name': 'Image Classification'
+            }
+          }
         }
       ]
     }
@@ -654,7 +939,7 @@ export const stacks = [
         'name': 'Machine Learning and Data Analytics', 
       }
     },
-    'skill_name_order': 7
+    'stack_skill_order': 7
   },
   {
     'name': 'Jupyter', 
@@ -667,7 +952,7 @@ export const stacks = [
         'name': 'Machine Learning and Data Analytics', 
       }
     },
-    'skill_name_order': 8
+    'stack_skill_order': 8
   },
   {
     'name': 'Solidity', 
@@ -680,7 +965,7 @@ export const stacks = [
         'name': 'Blockchain & Web3'
       }
     }, 
-    'skill_name_order': 1
+    'stack_skill_order': 1
   },
   {
     'name': 'Ethers.js',
@@ -693,7 +978,7 @@ export const stacks = [
         'name': 'Blockchain & Web3'
       }
     }, 
-    'skill_name_order': 2
+    'stack_skill_order': 2
   },
   {
     'name': 'Web3.js',
@@ -706,7 +991,7 @@ export const stacks = [
         'name': 'Blockchain & Web3'
       }
     }, 
-    'skill_name_order': 3
+    'stack_skill_order': 3
   },
   {
     'name': 'SmartPy', 
@@ -719,13 +1004,18 @@ export const stacks = [
         'name': 'Blockchain & Web3'
       }
     }, 
-    'skill_name_order': 4,
+    'stack_skill_order': 4,
 
     'projects': {
-      connect: [
+      create: [
         {
-          'name': 'CraiyoNFT'
-        },
+          'stack_project_order': 3,
+          'project': {
+            connect: {
+              'name': 'CraiyoNFT'
+            }
+          }
+        }
       ]
     }
   },
@@ -739,13 +1029,18 @@ export const stacks = [
         'name': 'Firmware Development'
       }
     }, 
-    'skill_name_order': 2,
+    'stack_skill_order': 2,
 
     'projects': {
-      connect: [
+      create: [
         {
-          'name': 'CTF'
-        },
+          'stack_project_order': 2,
+          'project': {
+            connect: {
+              'name': 'CTF'
+            },
+          }
+        }
       ]
     }
   },
@@ -759,13 +1054,20 @@ export const stacks = [
         'name': 'Firmware Development'
       }
     },
-    'skill_name_order': 3,
+    'stack_skill_order': 3,
 
     'companies': {
-      connect: {
-        'name': 'Trilogy Technologies'
-      }
-    }
+      create: [
+        {
+          'stack_company_order': 3,
+          'company': {
+            connect: {
+              'name': 'Trilogy Technologies'
+            }
+          }
+        }
+      ]
+    },
   },
   {
     'name': 'Github', 
@@ -778,7 +1080,7 @@ export const stacks = [
         'name': 'DevOps'
       }
     }, 
-    'skill_name_order': 2
+    'stack_skill_order': 2
   },
   {
     'name': 'Docker', 
@@ -791,15 +1093,25 @@ export const stacks = [
         'name': 'DevOps'
       }
     }, 
-    'skill_name_order': 3,
+    'stack_skill_order': 3,
 
     'projects': {
-      connect: [
+      create: [
         {
-          'name': 'CraiyoNFT'
+          'stack_project_order': 5,
+          'project': {
+            connect: {
+              'name': 'CraiyoNFT'
+            }
+          }
         },
         {
-          'name': 'ModusPonens'
+          'stack_project_order': 6,
+          'project': {
+            connect: {
+              'name': 'ModusPonens'
+            }
+          }
         }
       ]
     }
@@ -815,7 +1127,7 @@ export const stacks = [
         'name': 'DevOps'
       }
     }, 
-    'skill_name_order': 4
+    'stack_skill_order': 4
   },
   {
     'name': 'Replit', 
@@ -828,16 +1140,26 @@ export const stacks = [
         'name': 'DevOps'
       }
     }, 
-    'skill_name_order': 5,
+    'stack_skill_order': 5,
 
     'projects': {
-      connect: [
+      create: [
         {
-          'name': 'Discord Carebot'
+          'stack_project_order': 3,
+          'project': {
+            connect: {
+              'name': 'Discord Carebot'
+            }
+          }
         },
         {
-          'name': 'Telegram Carebot'
-        },
+          'stack_project_order': 3,
+          'project': {
+            connect: {
+              'name': 'Telegram Carebot'
+            }
+          }
+        }
       ]
     }
   },
@@ -852,7 +1174,7 @@ export const stacks = [
         'name': 'DevOps'
       }
     }, 
-    'skill_name_order': 6
+    'stack_skill_order': 6
   },
   {
     'name': 'Google Cloud Platform',
@@ -865,13 +1187,18 @@ export const stacks = [
         'name': 'DevOps'
       }
     }, 
-    'skill_name_order': 7,
+    'stack_skill_order': 7,
 
     'projects': {
-      connect: [
+      create: [
         {
-          'name': 'CraiyoNFT'
-        },
+          'stack_project_order': 6,
+          'project': {
+            connect: {
+              'name': 'CraiyoNFT'
+            },
+          }
+        }
       ]
     }
   }

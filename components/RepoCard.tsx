@@ -13,9 +13,11 @@ type Props = {
   deployed_link: string | null,
   colour: string,
   cover_path: string,
-  stacks:{
-    logo_path_light: string;
-    logo_path_dark: string;
+  stacks: {
+    stack: {
+      logo_path_light: string;
+      logo_path_dark: string;
+    }
   }[]
 }
 
@@ -45,7 +47,7 @@ const RepoCard = ({variant, name, github_link, deployed_link, stacks, colour, co
         </div>
         <div className='flex justify-between w-full mt-2 md:mt-4'>
           <div className='flex bg-white dark:bg-indigo gap-2 md:gap-4 p-1 md:py-2 rounded-lg md:px-3'>
-            {stacks.map(({logo_path_light, logo_path_dark}, i) => <img key={i} src={mounted && currentTheme === 'dark' ? logo_path_dark : logo_path_light} alt='stack_logo' className='w-6 md:w-8' />)}
+            {stacks.map(({stack}, i) => <img key={i} src={mounted && currentTheme === 'dark' ? stack.logo_path_dark : stack.logo_path_light} alt='stack_logo' className='w-6 md:w-8' />)}
           </div>
           <div className='flex sm:hidden gap-2 min-w-max items-center'>
             <a href={github_link} rel='noopener noreferrer' target='_blank' className='hover:opacity-90'>

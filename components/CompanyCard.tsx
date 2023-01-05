@@ -13,8 +13,10 @@ type Props = {
   end_date: string | null,
   description: string[],
   stacks: {
-    logo_path_light: string;
-    logo_path_dark: string;
+    stack: {
+      logo_path_light: string;
+      logo_path_dark: string;
+    }
   }[],
   link: string,
   focus: boolean
@@ -38,7 +40,7 @@ const CompanyCard = ({name, position, logo_path_light, logo_path_dark, start_dat
           {new Date(start_date).toLocaleDateString('en-GB', { month: 'short', year: 'numeric'})} – {end_date === null ? 'Present' : new Date(end_date).toLocaleDateString('en-GB', { month: 'short', year: 'numeric'})}
         </h4>
         <div className='flex gap-3 self-center'>
-          {stacks.map(({logo_path_dark, logo_path_light}, i) => <img src={mounted && currentTheme === 'dark' ? logo_path_dark : logo_path_light} key={i} alt='stack' width={40} />)}
+          {stacks.map(({stack}, i) => <img src={mounted && currentTheme === 'dark' ? stack.logo_path_dark : stack.logo_path_light} key={i} alt='stack' width={40} />)}
         </div>
         <ul className='text-xs'>
           {description.map((text, i) => <li key={i}>

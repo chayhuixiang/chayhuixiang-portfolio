@@ -8,7 +8,7 @@ type Company {
   description: [String]
   link: String!
 
-  stacks: [Stack]!
+  stacks: [StacksOnCompanies]!
 }
 
 type Stack {
@@ -16,9 +16,25 @@ type Stack {
   logo_path_light: String!
   logo_path_dark: String!
   colour: String!
-  skill_work_order: Int!
+  stack_work_order: Int
   skill_name: String
-  skill_name_order: Int
+  stack_skill_order: Int!
+}
+
+type StacksOnProjects {
+  stack_name: String!
+  project_name: String!
+  stack_project_order: Int!
+  stack: Stack!
+  project: Project!
+}
+
+type StacksOnCompanies {
+  stack: Stack!
+  stack_name: String!
+  company: Company!
+  company_name: String!
+  stack_company_order: Int!
 }
 
 type Skill {
@@ -47,7 +63,7 @@ type Project {
   repo: String!
   owner: String!
 
-  stacks: [Stack]!
+  stacks: [StacksOnProjects]!
 }
 
 type Achievement {

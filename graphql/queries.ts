@@ -20,7 +20,7 @@ export const GET_WORK_STACKS = gql`
       logo_path_dark
       logo_path_light
       name,
-      skill_work_order
+      stack_work_order
     }
   }
 `
@@ -37,8 +37,10 @@ export const GET_COMPANIES = gql`
       logo_path_dark
       logo_path_light
       stacks {
-        logo_path_dark
-        logo_path_light
+        stack {
+          logo_path_dark
+          logo_path_light
+        }
       }
     }
   }
@@ -58,8 +60,10 @@ export const GET_PROJECTS = gql`
       cover_path
       colour
       stacks {
-        logo_path_dark
-        logo_path_light
+        stack {
+          logo_path_dark
+          logo_path_light
+        }
       }
     }
   }

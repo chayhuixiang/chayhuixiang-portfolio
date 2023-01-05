@@ -11,8 +11,10 @@ type Props = {
   projects: (Project & {
     pushedAt: string
     stacks: {
-      logo_path_light: string;
-      logo_path_dark: string;
+      stack: {
+        logo_path_light: string;
+        logo_path_dark: string;
+      }
     }[]
   })[]
 }

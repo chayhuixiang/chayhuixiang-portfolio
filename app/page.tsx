@@ -1,5 +1,4 @@
-import { Skill } from '../data/schema'
-import { fetchedSkills } from '../data/skill'
+import { sortedSkills } from '../data/skill'
 import ButtonGroup from './ButtonGroup'
 import Avatar from '../components/images/about/Avatar'
 import SkillCard from '../components/SkillCard'
@@ -9,8 +8,8 @@ import { GET_SKILLS } from '../graphql/queries'
 import { SkillResponse } from '../graphql/schema'
 
 const About = async () => {
-  // const sortedSkills = fetchedSkills.sort((a, b) => a.display_order - b.display_order);
-  const sortedSkills = await fetchSkills();
+  // const sortedSkills = await fetchSkills();
+  // console.log(JSON.stringify(sortedSkills));
   return (
     <main className='relative'>
       {/* abstract background */}
@@ -50,7 +49,7 @@ const About = async () => {
           <h1 className='text-center text-[1.75rem] sm:text-[2.5rem] leading-tight sm:leading-normal'>How I can contribute</h1>
           <p className='mt-4 sm:mt-9 text-center w-full max-w-[39.1rem]'><span className='hidden sm:inline-block'>My years of tinkering in science, research and programming have deeply fuelled my passion for software development and computer science (CS).</span> Here is my software skillset, and some of the technologies that I have worked with.</p>
           <div className='mt-4 sm:mt-14 max-w-[49.5rem] flex flex-col gap-4 sm:gap-12 w-full'>
-            {sortedSkills.map(({name, logo_path, display_order, stacks}: SkillResponse) => 
+            {sortedSkills.map(({name, logo_path, display_order, stacks}) => 
               <SkillCard key={display_order} name={name} logo_path={logo_path} stacks={stacks} />
             )}
           </div>
@@ -61,7 +60,7 @@ const About = async () => {
 }
 
 const fetchSkills = async() => {
-  const fetchedSkills: { skills: SkillResponse[] } = await graphqlClient.request(GET_SKILLS);
+  const fetchedSkills: { skills: SkillResponse } = await graphqlClient.request(GET_SKILLS);
   return fetchedSkills.skills;
 }
 

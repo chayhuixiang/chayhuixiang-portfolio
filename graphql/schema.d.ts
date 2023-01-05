@@ -4,7 +4,7 @@ export type SkillResponse = (Skill & {
   stacks: {
       name: string;
   }[];
-})
+})[]
 
 export type CompanyResponse = ({
   name: string;
@@ -22,7 +22,7 @@ export type CompanyResponse = ({
       logo_path_dark: string;
     }
   }[];
-})
+})[]
 
 export type ProjectResponse = (Project & {
   stacks: {
@@ -45,4 +45,4 @@ export type AchievementResponse = {
   name: string;
   description: string;
   link: string;
-}
+}[]

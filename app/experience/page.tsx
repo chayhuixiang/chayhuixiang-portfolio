@@ -8,7 +8,9 @@ import { CompanyResponse } from '../../graphql/schema'
 
 const Experience = async () => {
   const sortedCompanies = await fetchCompanies();
+  console.log(JSON.stringify(sortedCompanies))
   const sortedWorkStack = await fetchWorkStacks();
+  console.log(JSON.stringify(sortedWorkStack));
   return (
     <main className='w-full bg-white dark:bg-indigo md:bg-[url("/images/experience/experience-background-md.svg")] dark:md:bg-[url("/images/experience/experience-background-dark-md.svg")] lg:bg-[url("/images/experience/experience-background-lg.svg")] dark:lg:bg-[url("/images/experience/experience-background-dark-lg.svg")] bg-no-repeat md:bg-[right_top_30rem] lg:bg-[right_center]'>
       <div className='w-full max-w-7xl px-4 sm:px-[3rem] lg:pl-[7.5rem] lg:pr-32 py-[3.875rem] md:py-28 m-auto'>
@@ -27,7 +29,7 @@ const Experience = async () => {
 }
 
 const fetchCompanies = async () => {
-  const fetchedCompanies: {companies: CompanyResponse[]} = await graphqlClient.request(GET_COMPANIES);
+  const fetchedCompanies: {companies: CompanyResponse} = await graphqlClient.request(GET_COMPANIES);
   return fetchedCompanies.companies;
 }
 

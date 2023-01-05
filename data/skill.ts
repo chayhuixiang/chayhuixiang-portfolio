@@ -1,52 +1,157 @@
-import { Skill } from "./schema";
+import { SkillResponse } from "../graphql/schema";
 
-export const fetchedSkills: Skill[] = [
+export const sortedSkills: SkillResponse = [
   {
-    'name': 'Frontend Development',
-    'logo_path': '/images/skill/frontend.svg',
-    'display_order': 1,
-    'stack': [
-      'HTML', 'CSS', 'Javascript', 'Typescript', 'React', 'Next', 'Figma', 'Tailwind', 'Redux'
-    ]
+     "display_order":1,
+     "logo_path":"/images/skill/frontend.svg",
+     "name":"Frontend Development",
+     "stacks":[
+        {
+           "name":"HTML"
+        },
+        {
+           "name":"CSS"
+        },
+        {
+           "name":"Javascript"
+        },
+        {
+           "name":"Typescript"
+        },
+        {
+           "name":"React"
+        },
+        {
+           "name":"Next"
+        },
+        {
+           "name":"Figma"
+        },
+        {
+           "name":"Tailwind"
+        },
+        {
+           "name":"Redux"
+        }
+     ]
   },
   {
-    'name': 'Backend Development',
-    'logo_path': '/images/skill/backend.svg',
-    'display_order': 2,
-    'stack': [
-      'NodeJS', 'Express', 'Flask', 'SQLite', 'MongoDB', 'Firebase'
-    ]
+     "display_order":2,
+     "logo_path":"/images/skill/backend.svg",
+     "name":"Backend Development",
+     "stacks":[
+        {
+           "name":"NodeJS"
+        },
+        {
+           "name":"Express"
+        },
+        {
+           "name":"Flask"
+        },
+        {
+           "name":"SQLite"
+        },
+        {
+           "name":"MongoDB"
+        },
+        {
+           "name":"Firebase"
+        }
+     ]
   },
   {
-    'name': 'Machine Learning and Data Analytics',
-    'logo_path': '/images/skill/mlda.svg',
-    'display_order': 3,
-    'stack': [
-      'Tensorflow', 'PyTorch', 'OpenCV', 'Pandas', 'Seaborn', 'Matplotlib', 'Kepler.gl', 'Jupyter'
-    ]
+     "display_order":3,
+     "logo_path":"/images/skill/mlda.svg",
+     "name":"Machine Learning and Data Analytics",
+     "stacks":[
+        {
+           "name":"TensorFlow"
+        },
+        {
+           "name":"PyTorch"
+        },
+        {
+           "name":"OpenCV"
+        },
+        {
+           "name":"Pandas"
+        },
+        {
+           "name":"Seaborn"
+        },
+        {
+           "name":"Matplotlib"
+        },
+        {
+           "name":"Kepler.gl"
+        },
+        {
+           "name":"Jupyter"
+        }
+     ]
   },
   {
-    'name': 'Blockchain & Web3',
-    'logo_path': '/images/skill/blockchain.svg',
-    'display_order': 4,
-    'stack': [
-      'Solidity', 'Ethers.js', 'Web3.js', 'SmartPy'
-    ]
+     "display_order":4,
+     "logo_path":"/images/skill/blockchain.svg",
+     "name":"Blockchain & Web3",
+     "stacks":[
+        {
+           "name":"Solidity"
+        },
+        {
+           "name":"Ethers.js"
+        },
+        {
+           "name":"Web3.js"
+        },
+        {
+           "name":"SmartPy"
+        }
+     ]
   },
   {
-    'name': 'Firmware Development',
-    'logo_path': '/images/skill/firmware.svg',
-    'display_order': 5,
-    'stack': [
-      'Arduino', 'Linux', 'Raspberry Pi'
-    ]
+     "display_order":5,
+     "logo_path":"/images/skill/firmware.svg",
+     "name":"Firmware Development",
+     "stacks":[
+        {
+           "name":"Arduino"
+        },
+        {
+           "name":"Linux"
+        },
+        {
+           "name":"Raspberry Pi"
+        }
+     ]
   },
   {
-    'name': 'DevOps',
-    'logo_path': '/images/skill/devops.svg',
-    'display_order': 6,
-    'stack': [
-      'Git', 'Github', 'Docker', 'Vercel', 'Netlify', 'Replit', 'Google Cloud Platform'
-    ]
+     "display_order":6,
+     "logo_path":"/images/skill/devops.svg",
+     "name":"DevOps",
+     "stacks":[
+        {
+           "name":"Git"
+        },
+        {
+           "name":"Github"
+        },
+        {
+           "name":"Docker"
+        },
+        {
+           "name":"Vercel"
+        },
+        {
+           "name":"Replit"
+        },
+        {
+           "name":"Netlify"
+        },
+        {
+           "name":"Google Cloud Platform"
+        }
+     ]
   }
 ]

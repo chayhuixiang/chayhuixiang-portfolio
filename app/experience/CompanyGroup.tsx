@@ -7,7 +7,7 @@ import { CompanyResponse } from '../../graphql/schema'
 // import { fetchedCompanies } from '../../data/company'
 
 type Props = {
-  sortedCompanies: CompanyResponse[]
+  sortedCompanies: CompanyResponse
 }
 
 const CompanyGroup = ({ sortedCompanies }: Props) => {

@@ -5,11 +5,13 @@ import { graphqlClient } from '../../lib/graphqlClient'
 import { GET_COMPANIES, GET_WORK_STACKS } from '../../graphql/queries'
 import { Stack } from '@prisma/client'
 import { CompanyResponse } from '../../graphql/schema'
+import { sortedWorkStack } from '../../data/stack';
+import { sortedCompanies } from '../../data/company'
 
 const Experience = async () => {
-  const sortedCompanies = await fetchCompanies();
+  // const sortedCompanies = await fetchCompanies();
   console.log(JSON.stringify(sortedCompanies))
-  const sortedWorkStack = await fetchWorkStacks();
+  // const sortedWorkStack = await fetchWorkStacks();
   console.log(JSON.stringify(sortedWorkStack));
   return (
     <main className='w-full bg-white dark:bg-indigo md:bg-[url("/images/experience/experience-background-md.svg")] dark:md:bg-[url("/images/experience/experience-background-dark-md.svg")] lg:bg-[url("/images/experience/experience-background-lg.svg")] dark:lg:bg-[url("/images/experience/experience-background-dark-lg.svg")] bg-no-repeat md:bg-[right_top_30rem] lg:bg-[right_center]'>

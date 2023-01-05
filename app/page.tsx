@@ -1,4 +1,4 @@
-import { sortedSkills } from '../data/skill'
+// import { sortedSkills } from '../data/skill'
 import ButtonGroup from './ButtonGroup'
 import Avatar from '../components/images/about/Avatar'
 import SkillCard from '../components/SkillCard'
@@ -8,8 +8,7 @@ import { GET_SKILLS } from '../graphql/queries'
 import { SkillResponse } from '../graphql/schema'
 
 const About = async () => {
-  // const sortedSkills = await fetchSkills();
-  // console.log(JSON.stringify(sortedSkills));
+  const sortedSkills = await fetchSkills();
   return (
     <main className='relative'>
       {/* abstract background */}

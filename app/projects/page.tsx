@@ -1,5 +1,5 @@
 import React from 'react'
-import { fetchedProjects } from '../../data/project'
+// import { fetchedProjects } from '../../data/project'
 // import { Project } from '../../data/schema';
 import { graphql, GraphQlQueryResponseData } from '@octokit/graphql'
 import ProjectCard from '../../components/ProjectCard';
@@ -9,7 +9,7 @@ import { GET_PROJECTS } from '../../graphql/queries';
 import { ProjectResponse } from '../../graphql/schema';
 
 const Projects = async () => {
-  // const fetchedProjects: ProjectResponse[] = await fetchProjects();
+  const fetchedProjects: ProjectResponse[] = await fetchProjects();
   const [featuredProjects, unfeaturedProjects] = await sortProjects(fetchedProjects);
   return (
     <main>

@@ -2,25 +2,12 @@
 
 import React, { useRef, useState, useCallback } from 'react'
 import CompanyCard from '../../components/CompanyCard'
+import { CompanyResponse } from '../../graphql/schema'
 // import { Company } from '../../data/schema'
 // import { fetchedCompanies } from '../../data/company'
 
 type Props = {
-  sortedCompanies: ({
-    name: string;
-    position: string;
-    logo_path_light: string;
-    logo_path_dark: string;
-    start_date: string;
-    end_date: string | null;
-    description: string[];
-    link: string;
-  } & {
-    stacks: {
-        logo_path_light: string;
-        logo_path_dark: string;
-    }[];
-  })[]
+  sortedCompanies: CompanyResponse[]
 }
 
 const CompanyGroup = ({ sortedCompanies }: Props) => {

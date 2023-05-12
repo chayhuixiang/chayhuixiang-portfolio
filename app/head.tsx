@@ -38,7 +38,7 @@ export default function Head() {
       <meta property="" />
       <meta
         property="keywords"
-        content="Full-stack Developer, Software Developer, Crystal Cheong"
+        content="Full-stack Developer, Software Developer, Chay Hui Xiang"
       ></meta>
 
       <meta name="twitter:card" content="summary_large_image" />

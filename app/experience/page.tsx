@@ -7,9 +7,13 @@ import { fetchCompanies, fetchWorkStacks } from "../../lib/data";
 
 const Experience = async () => {
   const sortedCompanies =
-    process.env.DATASOURCE === "json" ? jsonCompanies : await fetchCompanies();
+    process.env.NEXT_PUBLIC_DATASOURCE === "json"
+      ? jsonCompanies
+      : await fetchCompanies();
   const sortedWorkStack =
-    process.env.DATASOURCE === "json" ? jsonWorkStack : await fetchWorkStacks();
+    process.env.NEXT_PUBLIC_DATASOURCE === "json"
+      ? jsonWorkStack
+      : await fetchWorkStacks();
 
   return (
     <main className='w-full bg-white dark:bg-indigo md:bg-[url("/images/experience/experience-background-md.svg")] dark:md:bg-[url("/images/experience/experience-background-dark-md.svg")] lg:bg-[url("/images/experience/experience-background-lg.svg")] dark:lg:bg-[url("/images/experience/experience-background-dark-lg.svg")] bg-no-repeat md:bg-[right_top_30rem] lg:bg-[right_center]'>

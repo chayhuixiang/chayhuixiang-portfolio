@@ -7,7 +7,9 @@ import { fetchSkills } from "../lib/data";
 
 const About = async () => {
   const sortedSkills =
-    process.env.DATASOURCE === "json" ? jsonSkills : await fetchSkills();
+    process.env.NEXT_PUBLIC_DATASOURCE === "json"
+      ? jsonSkills
+      : await fetchSkills();
   return (
     <main className="relative">
       {/* abstract background */}

@@ -1,15 +1,17 @@
 import React from "react";
-// import { fetchedProjects } from '../../data/project'
+import jsonProjects from "../../data/project.json";
 // import { Project } from '../../data/schema';
 import { graphql, GraphQlQueryResponseData } from "@octokit/graphql";
 import ProjectCard from "../../components/ProjectCard";
 import Repo from "./Repo";
-import { graphqlClient } from "../../lib/graphqlClient";
-import { GET_PROJECTS } from "../../graphql/queries";
+import { fetchProjects } from "../../lib/data";
 import { ProjectResponse } from "../../graphql/schema";
 
 const Projects = async () => {
-  const fetchedProjects: ProjectResponse[] = await fetchProjects();
+  const fetchedProjects: ProjectResponse[] =
+    process.env.NEXT_PUBLIC_DATASOURCE === "json"
+      ? jsonProjects
+      : await fetchProjects();
   const [featuredProjects, unfeaturedProjects] = await sortProjects(
     fetchedProjects
   );
@@ -98,12 +100,6 @@ const sortProjects = async (fetchedProjects: ProjectResponse[]) => {
     }
   });
   return [featuredProjects, unfeaturedProjects];
-};
-
-const fetchProjects = async () => {
-  const fetchedProjects: { projects: ProjectResponse[] } =
-    await graphqlClient.request(GET_PROJECTS);
-  return fetchedProjects.projects;
 };
 
 export default Projects;

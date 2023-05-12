@@ -1,14 +1,13 @@
-// import { sortedSkills } from '../data/skill'
+import jsonSkills from "../data/skill.json";
 import ButtonGroup from "./ButtonGroup";
 import Avatar from "../components/images/about/Avatar";
 import SkillCard from "../components/SkillCard";
 import ImageGroup from "./ImageGroup";
-import { graphqlClient } from "../lib/graphqlClient";
-import { GET_SKILLS } from "../graphql/queries";
-import { SkillResponse } from "../graphql/schema";
+import { fetchSkills } from "../lib/data";
 
 const About = async () => {
-  const sortedSkills = await fetchSkills();
+  const sortedSkills =
+    process.env.DATASOURCE === "json" ? jsonSkills : await fetchSkills();
   return (
     <main className="relative">
       {/* abstract background */}
@@ -86,13 +85,6 @@ const About = async () => {
       </section>
     </main>
   );
-};
-
-const fetchSkills = async () => {
-  const fetchedSkills: { skills: SkillResponse } = await graphqlClient.request(
-    GET_SKILLS
-  );
-  return fetchedSkills.skills;
 };
 
 export default About;

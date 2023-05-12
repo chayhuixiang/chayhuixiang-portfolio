@@ -16,7 +16,7 @@ const ButtonGroup = () => {
           className="gap-4 shadow-lg"
         >
           <CodeBracketIcon className="w-6 h-6" />
-          <p>Let's Talk!</p>
+          <p>Let&apos;s Talk!</p>
         </Button>
       </Link>
       <Link href="/experience">

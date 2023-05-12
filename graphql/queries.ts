@@ -21,8 +21,6 @@ export const GET_WORK_STACKS = gql`
       logo_path_light
       name
       stack_work_order
-      skill_name
-      stack_skill_order
     }
   }
 `;

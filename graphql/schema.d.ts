@@ -1,10 +1,18 @@
 import { Skill } from "@prisma/client";
 
+export type StackResponse = {
+  name: string;
+  logo_path_light: string;
+  logo_path_dark: string;
+  colour: string;
+  stack_work_order: number;
+};
+
 export type SkillResponse = (Skill & {
   stacks: {
-      name: string;
+    name: string;
   }[];
-})[]
+})[];
 
 export type CompanyResponse = ({
   name: string;
@@ -20,18 +28,18 @@ export type CompanyResponse = ({
     stack: {
       logo_path_light: string;
       logo_path_dark: string;
-    }
+    };
   }[];
-})[]
+})[];
 
-export type ProjectResponse = (Project & {
+export type ProjectResponse = Project & {
   stacks: {
     stack: {
       logo_path_light: string;
       logo_path_dark: string;
-    }
+    };
   }[];
-})
+};
 
 export type AchievementResponse = {
   end_date: string | null;
@@ -45,4 +53,4 @@ export type AchievementResponse = {
   name: string;
   description: string;
   link: string;
-}[]
+}[];

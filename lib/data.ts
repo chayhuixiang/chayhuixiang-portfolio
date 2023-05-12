@@ -10,9 +10,9 @@ import {
   CompanyResponse,
   SkillResponse,
   ProjectResponse,
+  StackResponse,
 } from "../graphql/schema";
 import { graphqlClient } from "./graphqlClient";
-import { Stack } from "@prisma/client";
 
 export const fetchAchievements = async () => {
   const fetchedAchievements: { achievements: AchievementResponse } =
@@ -27,9 +27,8 @@ export const fetchCompanies = async () => {
 };
 
 export const fetchWorkStacks = async () => {
-  const fetchedStacks: { stacks: Stack[] } = await graphqlClient.request(
-    GET_WORK_STACKS
-  );
+  const fetchedStacks: { stacks: StackResponse[] } =
+    await graphqlClient.request(GET_WORK_STACKS);
   return fetchedStacks.stacks;
 };
 

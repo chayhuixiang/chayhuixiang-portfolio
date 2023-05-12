@@ -3,9 +3,10 @@ import React from "react";
 // import { Stack } from '../../data/schema';
 // import { fetchedWorkStack } from '../../data/stack'
 import StackCard from "../../components/StackCard";
+import { StackResponse } from "../../graphql/schema";
 
 type Props = {
-  sortedWorkStack: Stack[];
+  sortedWorkStack: StackResponse[];
 };
 
 const StackGroup = ({ sortedWorkStack }: Props) => {
@@ -13,7 +14,10 @@ const StackGroup = ({ sortedWorkStack }: Props) => {
   return (
     <div className="grid xl:grid-cols-9 sm:grid-cols-5 grid-cols-3 gap-7">
       {sortedWorkStack.map(
-        ({ name, logo_path_light, logo_path_dark, colour }: Stack, i) => (
+        (
+          { name, logo_path_light, logo_path_dark, colour }: StackResponse,
+          i
+        ) => (
           <StackCard
             name={name}
             logo_path_light={logo_path_light}

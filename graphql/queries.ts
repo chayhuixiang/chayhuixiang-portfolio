@@ -1,4 +1,4 @@
-import { gql } from "graphql-request"
+import { gql } from "graphql-request";
 
 export const GET_SKILLS = gql`
   query GetSkills {
@@ -11,7 +11,7 @@ export const GET_SKILLS = gql`
       }
     }
   }
-`
+`;
 
 export const GET_WORK_STACKS = gql`
   query GetWorkStacks {
@@ -19,11 +19,13 @@ export const GET_WORK_STACKS = gql`
       colour
       logo_path_dark
       logo_path_light
-      name,
+      name
       stack_work_order
+      skill_name
+      stack_skill_order
     }
   }
-`
+`;
 
 export const GET_COMPANIES = gql`
   query GetCompanies {
@@ -44,7 +46,7 @@ export const GET_COMPANIES = gql`
       }
     }
   }
-`
+`;
 
 export const GET_PROJECTS = gql`
   query GetProjects {
@@ -67,7 +69,7 @@ export const GET_PROJECTS = gql`
       }
     }
   }
-`
+`;
 
 export const GET_ACHIEVEMENTS = gql`
   query GetAchievements {
@@ -85,4 +87,4 @@ export const GET_ACHIEVEMENTS = gql`
       year
     }
   }
-`
+`;

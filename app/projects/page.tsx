@@ -12,7 +12,10 @@ const Projects = async () => {
   //   process.env.NEXT_PUBLIC_DATASOURCE === "json"
   //     ? jsonProjects
   //     : await fetchProjects();
-  const fetchedProjects = await fetchProjects();
+
+  // const fetchedProjects = await fetchProjects();
+
+  const fetchedProjects = jsonProjects;
   const [featuredProjects, unfeaturedProjects] = await sortProjects(
     fetchedProjects
   );

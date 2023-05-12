@@ -11,7 +11,9 @@ const About = async () => {
   //     ? jsonSkills
   //     : await fetchSkills();
 
-  const sortedSkills = await fetchSkills();
+  // const sortedSkills = await fetchSkills();
+
+  const sortedSkills = jsonSkills;
   return (
     <main className="relative">
       {/* abstract background */}

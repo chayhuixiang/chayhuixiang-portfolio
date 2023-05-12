@@ -44,6 +44,8 @@ const Loader = () => {
     sequence();
   }, []);
 
+  console.log("Loader re-render");
+
   return (
     <div
       className={`h-[100vh] w-screen fixed bg-white dark:bg-indigo left-0 top-0 z-50 flex items-center justify-center transition-all duration-500 pointer-events-none ${

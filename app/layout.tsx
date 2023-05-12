@@ -9,6 +9,8 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  console.log("Layout re-render");
+
   return (
     <html>
       <head />

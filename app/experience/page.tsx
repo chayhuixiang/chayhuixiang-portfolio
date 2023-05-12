@@ -15,8 +15,11 @@ const Experience = async () => {
   //     ? jsonWorkStack
   //     : await fetchWorkStacks();
 
-  const sortedCompanies = await fetchCompanies();
-  const sortedWorkStack = await fetchWorkStacks();
+  // const sortedCompanies = await fetchCompanies();
+  // const sortedWorkStack = await fetchWorkStacks();
+
+  const sortedCompanies = jsonCompanies;
+  const sortedWorkStack = jsonWorkStack;
 
   return (
     <main className='w-full bg-white dark:bg-indigo md:bg-[url("/images/experience/experience-background-md.svg")] dark:md:bg-[url("/images/experience/experience-background-dark-md.svg")] lg:bg-[url("/images/experience/experience-background-lg.svg")] dark:lg:bg-[url("/images/experience/experience-background-dark-lg.svg")] bg-no-repeat md:bg-[right_top_30rem] lg:bg-[right_center]'>

@@ -6,10 +6,12 @@ import ImageGroup from "./ImageGroup";
 import { fetchSkills } from "../lib/data";
 
 const About = async () => {
-  const sortedSkills =
-    process.env.NEXT_PUBLIC_DATASOURCE === "json"
-      ? jsonSkills
-      : await fetchSkills();
+  // const sortedSkills =
+  //   process.env.NEXT_PUBLIC_DATASOURCE === "json"
+  //     ? jsonSkills
+  //     : await fetchSkills();
+
+  const sortedSkills = await fetchSkills();
   return (
     <main className="relative">
       {/* abstract background */}

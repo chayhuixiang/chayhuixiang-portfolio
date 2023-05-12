@@ -8,10 +8,11 @@ import { fetchProjects } from "../../lib/data";
 import { ProjectResponse } from "../../graphql/schema";
 
 const Projects = async () => {
-  const fetchedProjects: ProjectResponse[] =
-    process.env.NEXT_PUBLIC_DATASOURCE === "json"
-      ? jsonProjects
-      : await fetchProjects();
+  // const fetchedProjects: ProjectResponse[] =
+  //   process.env.NEXT_PUBLIC_DATASOURCE === "json"
+  //     ? jsonProjects
+  //     : await fetchProjects();
+  const fetchedProjects = await fetchProjects();
   const [featuredProjects, unfeaturedProjects] = await sortProjects(
     fetchedProjects
   );

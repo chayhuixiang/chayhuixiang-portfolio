@@ -19,7 +19,7 @@ type Props = {
   })[]
 }
 
-type Options = 'All' | 'DSAI' | 'Web Dev.' | 'Cybersecurity' | 'Misc.'
+type Options = 'All' | 'DSAI' | 'Web/App Dev.' | 'Cybersecurity' | 'Misc.'
 
 const Repo = ({projects}: Props) => {
   const [showMenu, setShowMenu] = useState<boolean>(false);
@@ -28,8 +28,8 @@ const Repo = ({projects}: Props) => {
   const displayedProjects = projects.filter((project) => {
     if (selectedOption === 'DSAI') {
       return project.type === 'dsai';
-    } else if (selectedOption === 'Web Dev.') {
-      return project.type === 'webdev';
+    } else if (selectedOption === 'Web/App Dev.') {
+      return project.type === 'webdev' || project.type === 'appdev' ;
     } else if (selectedOption === 'Cybersecurity') {
       return project.type === 'cybersecurity'
     } else if (selectedOption === 'Misc.') {
@@ -47,8 +47,8 @@ const Repo = ({projects}: Props) => {
       onClick: () => setSelectedOption('DSAI')
     },
     {
-      name: 'Web Dev.',
-      onClick: () => setSelectedOption('Web Dev.')
+      name: 'Web/App Dev.',
+      onClick: () => setSelectedOption('Web/App Dev.')
     },
     {
       name: 'Cybersecurity',
@@ -57,7 +57,7 @@ const Repo = ({projects}: Props) => {
     {
       name: 'Misc.',
       onClick: () => setSelectedOption('Misc.')
-    }
+    },
   ]
 
   return (

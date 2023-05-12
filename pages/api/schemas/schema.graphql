@@ -49,6 +49,7 @@ enum Project_Type {
   dsai
   cybersecurity
   misc
+  appdev
 }  
 
 type Project {

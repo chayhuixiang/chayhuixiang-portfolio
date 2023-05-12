@@ -10,56 +10,61 @@ const prisma = new PrismaClient();
 const load = async () => {
   try {
     await prisma.skill.deleteMany();
-    console.log('Deleted Records in Skill Table')
+    console.log("Deleted Records in Skill Table");
 
     await prisma.skill.createMany({
-      data: skills
-    })
-    console.log('Added Skill Data')
+      data: skills,
+    });
+    console.log("Added Skill Data");
+
+    await prisma.stacksOnCompanies.deleteMany();
+    console.log("Deleted Records in StacksOnCompanies Table");
 
     await prisma.company.deleteMany();
-    console.log('Deleted Records in Company Table')
+    console.log("Deleted Records in Company Table");
 
     await prisma.company.createMany({
-      data: companies
-    })
-    console.log('Added Company Data')
+      data: companies,
+    });
+    console.log("Added Company Data");
+
+    await prisma.stacksOnProjects.deleteMany();
+    console.log("Deleted Records in StacksOnProjects Table");
 
     await prisma.project.deleteMany();
-    console.log('Deleted Records in Project Table')
+    console.log("Deleted Records in Project Table");
 
     await prisma.project.createMany({
-      data: projects
-    })
-    console.log('Added Project Data')
+      data: projects,
+    });
+    console.log("Added Project Data");
 
     await prisma.achievement.deleteMany();
-    console.log('Deleted Records in Achievement Table')
+    console.log("Deleted Records in Achievement Table");
 
     await prisma.achievement.createMany({
-      data: achievements
-    })
-    console.log('Added Achievement Data')
+      data: achievements,
+    });
+    console.log("Added Achievement Data");
 
     await prisma.stack.deleteMany();
-    console.log('Deleted Records in Stack Table')
+    console.log("Deleted Records in Stack Table");
 
     // await prisma.stack.createMany({
     //   data: stacks
     // })
     stacks.forEach(async (stack) => {
       await prisma.stack.create({
-        data: stack
-      })
-    })
-    console.log('Added Stack Data')
-
+        data: stack,
+      });
+    });
+    console.log("Added Stack Data");
   } catch (error) {
-    console.error(error)
-    process.exit(1)
+    console.error(error);
+    process.exit(1);
   } finally {
-    await prisma.$disconnect()
+    await prisma.$disconnect();
   }
-}
+};
 
 load();

@@ -72,6 +72,7 @@ enum Project_Type {
   dsai
   cybersecurity
   misc
+  appdev
 }
 
 model Project {

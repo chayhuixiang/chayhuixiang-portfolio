@@ -1,13 +1,9 @@
-import Providers from './Providers';
+import Providers from "./Providers";
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
-  return (
-    <Providers>
-      {children}
-    </Providers>
-  )
+  return <Providers>{children}</Providers>;
 }

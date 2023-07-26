@@ -3,9 +3,9 @@
     "name": "Trilogy Technologies",
     "position": "Software Intern",
     "description": [
-      "Wrote Firmware for a working IV Drip Monitor, using a ATMega328 MCU and Arduino",
-      "Represented the company as part of Healthcare Open Innovation Challenge 2020 with an elderly-friendly pill dispenser developed with ESP32 & Raspberry Pi",
-      "Demonstrated expertise in NodeJS, Express, Python, Bootstrap, Firebase as part of other miscellaneous completed projects"
+      "Wrote entire firmware codebase for a IV Drip Monitor, using a ATMega328 MCU and Arduino",
+      "Represented the company as part of Healthcare Open Innovation Challenge 2020 with an elderly-friendly pill dispenser developed with Raspberry Pi, Python Tkinter and Firebase",
+      "Successfully orchestrated a full-stack service via a ReactJS frontend dashboard, fully integrated with a NodeJS Express data streaming backend to process incoming data from an ESP32 onto Cloud Firestore"
     ],
     "link": "https://www.3logytech.com/",
     "end_date": "2021-05-28T00:00:00.000Z",
@@ -169,6 +169,12 @@
         "stack": {
           "logo_path_dark": "/images/stack/supabase-dark.svg",
           "logo_path_light": "/images/stack/supabase.svg"
+        }
+      },
+      {
+        "stack": {
+          "logo_path_dark": "/images/stack/bigquery-dark.svg",
+          "logo_path_light": "/images/stack/bigquery.svg"
         }
       }
     ]

@@ -16,6 +16,8 @@ import Avatar from "../components/images/about/Avatar";
 import { useTheme } from "next-themes";
 import useMounted from "../hooks/useMounted";
 
+const RESUME_LINK = "/resume/chayhuixiang_resume.pdf";
+
 const Navbar: React.FC = () => {
   const mounted = useMounted();
   const { systemTheme, theme, setTheme } = useTheme();
@@ -138,7 +140,7 @@ const Navbar: React.FC = () => {
           {/* xl */}
           <DarkModeButton className="hidden xl:flex" />
           <a
-            href="https://drive.google.com/file/d/13K2IqjNpLheZ_HtbqIzcKw-FoA7mqYkN/view?usp=sharing"
+            href={RESUME_LINK}
             target="_blank"
             rel="noopener noreferrer"
             className="hidden xl:block"
@@ -173,7 +175,7 @@ const Navbar: React.FC = () => {
             ref={dropdownRef}
           >
             <a
-              href="https://drive.google.com/file/d/13K2IqjNpLheZ_HtbqIzcKw-FoA7mqYkN/view?usp=sharing"
+              href={RESUME_LINK}
               rel="noreferrer noopener"
               target="_blank"
               className="flex h-1/2 gap-3 px-4 items-center hover:bg-blue-dark/10 dark:hover:bg-zinc-300/10 dark:hover:text-zinc-300 hover:text-gunmetal cursor-pointer"
@@ -303,11 +305,7 @@ const Navbar: React.FC = () => {
                 <h4>Contact</h4>
               </Link>
             </div>
-            <a
-              href="https://drive.google.com/file/d/13K2IqjNpLheZ_HtbqIzcKw-FoA7mqYkN/view?usp=sharing"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href={RESUME_LINK} target="_blank" rel="noopener noreferrer">
               <Button
                 onClick={() => {}}
                 type="outline"

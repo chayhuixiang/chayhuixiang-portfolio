@@ -27,8 +27,10 @@
       { "name": "Express" },
       { "name": "Flask" },
       { "name": "SQLite" },
-      { "name": "MongoDB" },
-      { "name": "Firebase" }
+      { "name": "PostgreSQL" },
+      { "name": "Firebase" },
+      { "name": "Supabase" },
+      { "name": "MongoDB" }
     ]
   },
   {
@@ -44,7 +46,8 @@
       { "name": "Matplotlib" },
       { "name": "Kepler.gl" },
       { "name": "Jupyter" },
-      { "name": "Scikit-Learn" }
+      { "name": "Scikit-Learn" },
+      { "name": "BigQuery" }
     ]
   },
   {

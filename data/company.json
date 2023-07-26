@@ -84,11 +84,11 @@
     "position": "Junior Data Analyst",
     "description": [
       "Performed a data analyst role in analysing football player performances and predicting match results",
-      "Pioneered the company’s Machine Learning endeavours via various model architectures including Random Decision Forests, Artificial Neural Networks, Support Vector Machines etc, and achieved an outcome prediction of 67% accuracy",
+      "Pioneered the company’s machine learning endeavours via various model architectures including Artificial Neural Networks, Support Vector Machines etc., achieving an outcome prediction of 67% accuracy",
       "Specialised in various Machine Learning frameworks, including TensorFlow, Keras and Pandas"
     ],
     "link": "https://www.fisher8.capital/",
-    "end_date": null,
+    "end_date": "2022-04-29T00:00:00.000Z",
     "start_date": "2022-07-04T00:00:00.000Z",
     "logo_path_dark": "/images/company/fisher8.png",
     "logo_path_light": "/images/company/fisher8.png",
@@ -115,7 +115,7 @@
   },
   {
     "name": "Tezos (TZ APAC)",
-    "position": "Student Ambassador",
+    "position": "Student Developer",
     "description": [
       "Contributor for the official OpenTezos documentation",
       "Tezos representative at Singapore Fintech Festival 2022"
@@ -130,6 +130,45 @@
         "stack": {
           "logo_path_dark": "/images/stack/ethereum-dark.svg",
           "logo_path_light": "/images/stack/ethereum.svg"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Mobbin",
+    "position": "Software Engineer Intern",
+    "description": [
+      "Spearheaded the enhancement of multiple features in their flagship product frontend, including a refresh of their landing page and sign up experience, culminating in a 35% increase in product sign ups",
+      "Drove various product decisions by formulating data-driven insights, performing A/B tests, applying data engineering expertise, and developing comprehensive data dashboards as part of the Growth Team"
+    ],
+    "link": "https://mobbin.com/",
+    "end_date": null,
+    "start_date": "2023-05-08T00:00:00.000Z",
+    "logo_path_dark": "/images/company/mobbin-dark.svg",
+    "logo_path_light": "/images/company/mobbin-light.svg",
+    "stacks": [
+      {
+        "stack": {
+          "logo_path_dark": "/images/stack/next-dark.svg",
+          "logo_path_light": "/images/stack/next.svg"
+        }
+      },
+      {
+        "stack": {
+          "logo_path_dark": "/images/stack/react-dark.svg",
+          "logo_path_light": "/images/stack/react.svg"
+        }
+      },
+      {
+        "stack": {
+          "logo_path_dark": "/images/stack/postgresql-dark.svg",
+          "logo_path_light": "/images/stack/postgresql.svg"
+        }
+      },
+      {
+        "stack": {
+          "logo_path_dark": "/images/stack/supabase-dark.svg",
+          "logo_path_light": "/images/stack/supabase.svg"
         }
       }
     ]

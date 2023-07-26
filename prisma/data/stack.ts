@@ -1,3 +1,5 @@
+import { m } from "framer-motion";
+
 export const stacks = [
   // stacks with skill and work order
 
@@ -134,6 +136,14 @@ export const stacks = [
           company: {
             connect: {
               name: "Switcheo Labs",
+            },
+          },
+        },
+        {
+          stack_company_order: 2,
+          company: {
+            connect: {
+              name: "Mobbin",
             },
           },
         },
@@ -679,6 +689,19 @@ export const stacks = [
         },
       ],
     },
+
+    companies: {
+      create: [
+        {
+          stack_company_order: 1,
+          company: {
+            connect: {
+              name: "Mobbin",
+            },
+          },
+        },
+      ],
+    },
   },
   {
     name: "Figma",
@@ -949,6 +972,58 @@ export const stacks = [
     stack_skill_order: 4,
   },
   {
+    name: "PostgreSQL",
+    logo_path_light: "/images/stack/postgresql.svg",
+    logo_path_dark: "/images/stack/postgresql-dark.svg",
+    colour: "#336791",
+
+    skill: {
+      connect: {
+        name: "Backend Development",
+      },
+    },
+    stack_skill_order: 5,
+
+    companies: {
+      create: [
+        {
+          stack_company_order: 3,
+          company: {
+            connect: {
+              name: "Mobbin",
+            },
+          },
+        },
+      ],
+    },
+  },
+  {
+    name: "Supabase",
+    logo_path_light: "/images/stack/supabase.svg",
+    logo_path_dark: "/images/stack/supabase-dark.svg",
+    colour: "#3ECF8E",
+
+    skill: {
+      connect: {
+        name: "Backend Development",
+      },
+    },
+    stack_skill_order: 6,
+
+    companies: {
+      create: [
+        {
+          stack_company_order: 4,
+          company: {
+            connect: {
+              name: "Mobbin",
+            },
+          },
+        },
+      ],
+    },
+  },
+  {
     name: "MongoDB",
     logo_path_light: "/images/stack/mongodb.png",
     logo_path_dark: "/images/stack/mongodb-dark.png",
@@ -959,7 +1034,7 @@ export const stacks = [
         name: "Backend Development",
       },
     },
-    stack_skill_order: 5,
+    stack_skill_order: 7,
   },
   {
     name: "PyTorch",
@@ -1190,6 +1265,33 @@ export const stacks = [
     },
 
     stack_skill_order: 9,
+  },
+  {
+    name: "BigQuery",
+    logo_path_light: "/images/stack/bigquery.svg",
+    logo_path_dark: "/images/stack/bigquery-dark.svg",
+    colour: "#4386FA",
+
+    skill: {
+      connect: {
+        name: "Machine Learning and Data Analytics",
+      },
+    },
+
+    companies: {
+      create: [
+        {
+          stack_company_order: 5,
+          company: {
+            connect: {
+              name: "Mobbin",
+            },
+          },
+        },
+      ],
+    },
+
+    stack_skill_order: 10,
   },
   {
     name: "Solidity",

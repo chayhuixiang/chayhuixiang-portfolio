@@ -9,7 +9,7 @@ const Footer = () => {
       <div className="w-full flex flex-col-reverse md:flex-row items-center justify-between max-w-7xl md:py-4 py-[0.625rem] md:px-[7.5rem] m-auto gap-2">
         <div className="flex items-center">
           <p className="text-xs md:text-base">
-            Chay Hui Xiang © 2022 All Rights Reserved
+            Chay Hui Xiang © 2023 All Rights Reserved
           </p>
         </div>
         <div className="flex gap-4">

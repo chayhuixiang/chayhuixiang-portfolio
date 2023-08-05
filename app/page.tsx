@@ -42,14 +42,14 @@ const About = async () => {
               <p className="text-center sm:text-left">
                 I’m a Year 2 Renaissance Engineering Programme Scholar
                 specialising in the field of Computer Science. Currently, I am
-                focused on data analytics in sports with machine learning at{" "}
+                focused on building seamless software experiences at{" "}
                 <a
-                  href="https://www.fisher8.capital/"
+                  href="https://www.mobbin.com/"
                   rel="noopener noreferrer"
                   target="_blank"
                   className="font-bold hover:underline"
                 >
-                  Fisher8 Capital
+                  Mobbin
                 </a>
                 , and building full-stack projects on the side.
               </p>

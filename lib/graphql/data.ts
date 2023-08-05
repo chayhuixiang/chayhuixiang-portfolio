@@ -4,14 +4,14 @@ import {
   GET_WORK_STACKS,
   GET_SKILLS,
   GET_PROJECTS,
-} from "../graphql/queries";
+} from "./queries";
 import {
   AchievementResponse,
   CompanyResponse,
   SkillResponse,
   ProjectResponse,
   StackResponse,
-} from "../graphql/schema";
+} from "./schema";
 import { graphqlClient } from "./graphqlClient";
 
 export const fetchAchievements = async () => {

@@ -3,7 +3,7 @@ import ButtonGroup from "./ButtonGroup";
 import Avatar from "../components/images/about/Avatar";
 import SkillCard from "../components/SkillCard";
 import ImageGroup from "./ImageGroup";
-import { fetchSkills } from "../lib/data";
+import { fetchSkills } from "../lib/graphql/data";
 
 const About = async () => {
   // const sortedSkills =

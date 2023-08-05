@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { useAnimationControls, motion } from "framer-motion";
-import useMounted from "../hooks/useMounted";
+import useMounted from "../lib/hooks/useMounted";
 import { useTheme } from "next-themes";
 
 const Loader = () => {

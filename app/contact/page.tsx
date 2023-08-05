@@ -9,9 +9,9 @@ import emailjs from "@emailjs/browser";
 import Spinner from "../../components/images/contact/Spinner";
 import Done from "../../components/images/contact/Done";
 import ErrorComponent from "../../components/images/contact/ContactError";
-import ContactError from "../../utils/ContactError";
+import ContactError from "../../lib/utils/ContactError";
 import { useReCaptcha } from "next-recaptcha-v3";
-import submitRecaptcha from "../../utils/submitRecaptcha";
+import submitRecaptcha from "../../lib/utils/submitRecaptcha";
 
 type statusId = "sending" | "error" | "sent" | "idle";
 type status = {
@@ -104,7 +104,7 @@ const Contact = () => {
         ref.current &&
         executeRecaptcha
       ) {
-        const response = await fetch("/api/limiter");
+        const response = await fetch("/limiter");
         if (!response.ok) {
           throw new ContactError("You have sent too many requests", ["submit"]);
         }

@@ -1,5 +1,11 @@
-const submitRecaptcha = async (gReCaptchaToken: string, name: string, email: string, message: string, theme: string) => {
-  const response = await fetch("/api/enquiry", {
+const submitRecaptcha = async (
+  gReCaptchaToken: string,
+  name: string,
+  email: string,
+  message: string,
+  theme: string
+) => {
+  const response = await fetch("/enquiry", {
     method: "POST",
     headers: {
       Accept: "application/json, text/plain, */*",
@@ -14,7 +20,7 @@ const submitRecaptcha = async (gReCaptchaToken: string, name: string, email: str
     }),
   });
   if (!response.ok) {
-    throw new Error('Oops. Something went wrong.');
+    throw new Error("Oops. Something went wrong.");
   }
   const data = await response.json();
   return data;

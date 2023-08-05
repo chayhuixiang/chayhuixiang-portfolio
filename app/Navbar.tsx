@@ -14,7 +14,7 @@ import { motion } from "framer-motion";
 import DarkModeButton from "../components/DarkModeButton";
 import Avatar from "../components/images/about/Avatar";
 import { useTheme } from "next-themes";
-import useMounted from "../hooks/useMounted";
+import useMounted from "../lib/hooks/useMounted";
 
 const RESUME_LINK = "/resume/chayhuixiang_resume.pdf";
 

@@ -4,8 +4,8 @@ import jsonProjects from "../../data/project.json";
 import { graphql, GraphQlQueryResponseData } from "@octokit/graphql";
 import ProjectCard from "../../components/ProjectCard";
 import Repo from "./Repo";
-import { fetchProjects } from "../../lib/data";
-import { ProjectResponse } from "../../graphql/schema";
+import { fetchProjects } from "../../lib/graphql/data";
+import { ProjectResponse } from "../../lib/graphql/schema";
 
 const Projects = async () => {
   // const fetchedProjects: ProjectResponse[] =

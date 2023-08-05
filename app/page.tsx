@@ -51,7 +51,7 @@ const About = async () => {
                 >
                   Mobbin
                 </a>
-                , and building full-stack projects on the side.
+                , and crafting full-stack projects on the side.
               </p>
             </div>
             {/* <Avatar className='relative hidden lg:block' width={421} height={421} /> */}

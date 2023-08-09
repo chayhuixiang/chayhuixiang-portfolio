@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState, useRef } from "react";
-import Button from "../components/Button";
+import Button from "@/components/Button";
 import {
   ArrowDownTrayIcon,
   SunIcon,
@@ -11,10 +11,10 @@ import {
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
-import DarkModeButton from "../components/DarkModeButton";
-import Avatar from "../components/images/about/Avatar";
+import DarkModeButton from "@/components/DarkModeButton";
+import Avatar from "@/components/images/about/Avatar";
 import { useTheme } from "next-themes";
-import useMounted from "../lib/hooks/useMounted";
+import useMounted from "@/lib/hooks/useMounted";
 
 const RESUME_LINK = "/resume/chayhuixiang_resume.pdf";
 

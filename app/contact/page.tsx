@@ -1,17 +1,17 @@
 "use client";
 
 import React, { useRef, useState, ReactNode } from "react";
-import Button from "../../components/Button";
+import Button from "@/components/Button";
 import { EnvelopeOpenIcon } from "@heroicons/react/24/outline";
-import Linkedin from "../../components/images/footer/Linkedin";
-import Github from "../../components/images/footer/Github";
+import Linkedin from "@/components/images/footer/Linkedin";
+import Github from "@/components/images/footer/Github";
 import emailjs from "@emailjs/browser";
-import Spinner from "../../components/images/contact/Spinner";
-import Done from "../../components/images/contact/Done";
-import ErrorComponent from "../../components/images/contact/ContactError";
-import ContactError from "../../lib/utils/ContactError";
+import Spinner from "@/components/images/contact/Spinner";
+import Done from "@/components/images/contact/Done";
+import ErrorComponent from "@/components/images/contact/ContactError";
+import ContactError from "@/lib/utils/ContactError";
 import { useReCaptcha } from "next-recaptcha-v3";
-import submitRecaptcha from "../../lib/utils/submitRecaptcha";
+import submitRecaptcha from "@/lib/utils/submitRecaptcha";
 
 type statusId = "sending" | "error" | "sent" | "idle";
 type status = {

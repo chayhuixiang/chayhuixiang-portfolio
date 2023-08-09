@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
-import useMounted from "../lib/hooks/useMounted";
+import useMounted from "@/lib/hooks/useMounted";
 
 type Props = {
   name: string;

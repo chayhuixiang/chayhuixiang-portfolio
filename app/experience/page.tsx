@@ -1,9 +1,9 @@
 import React from "react";
 import StackGroup from "./StackGroup";
 import CompanyGroup from "./CompanyGroup";
-import jsonWorkStack from "../../data/stack.json";
-import jsonCompanies from "../../data/company.json";
-import { fetchCompanies, fetchWorkStacks } from "../../lib/graphql/data";
+import jsonWorkStack from "@/data/stack.json";
+import jsonCompanies from "@/data/company.json";
+import { fetchCompanies, fetchWorkStacks } from "@/lib/graphql/data";
 
 const Experience = async () => {
   // const sortedCompanies =

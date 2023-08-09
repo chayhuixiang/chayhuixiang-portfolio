@@ -1,7 +1,7 @@
 "use client";
-import React, { useState } from "react";
-import Github from "../components/images/footer/Github";
-import Linkedin from "../components/images/footer/Linkedin";
+import React from "react";
+import Github from "@/components/images/footer/Github";
+import Linkedin from "@/components/images/footer/Linkedin";
 
 const Footer = () => {
   return (

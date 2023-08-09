@@ -1,8 +1,8 @@
 import React from "react";
-import AchievementsBackground from "../../components/images/achievements/AchievementsBackground";
+import AchievementsBackground from "@/components/images/achievements/AchievementsBackground";
 import AchievementsDisplay from "./AchievementsDisplay";
-import jsonAchievements from "../../data/achievement.json";
-import { fetchAchievements } from "../../lib/graphql/data";
+import jsonAchievements from "@/data/achievement.json";
+import { fetchAchievements } from "@/lib/graphql/data";
 
 const Achievements = async () => {
   // const fetchedAchievements =

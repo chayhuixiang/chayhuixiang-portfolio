@@ -4,7 +4,7 @@ import { useTheme } from "next-themes";
 import React, { useState } from "react";
 import RepoDeployed from "./images/projects/RepoDeployed";
 import RepoGithub from "./images/projects/RepoGithub";
-import useMounted from "../lib/hooks/useMounted";
+import useMounted from "@/lib/hooks/useMounted";
 
 type Props = {
   variant: "large" | "small";

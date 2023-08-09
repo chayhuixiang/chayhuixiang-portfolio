@@ -3,7 +3,7 @@
 import React from "react";
 import Button from "./Button";
 import { useTheme } from "next-themes";
-import useMounted from "../lib/hooks/useMounted";
+import useMounted from "@/lib/hooks/useMounted";
 
 type Props = {
   name: string;

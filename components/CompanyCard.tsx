@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useRef } from "react";
-import useMounted from "../lib/hooks/useMounted";
+import React from "react";
+import useMounted from "@/lib/hooks/useMounted";
 import { useTheme } from "next-themes";
 
 type Props = {

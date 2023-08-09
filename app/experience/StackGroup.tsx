@@ -1,9 +1,9 @@
 import { Stack } from "@prisma/client";
 import React from "react";
-// import { Stack } from '../../data/schema';
-// import { fetchedWorkStack } from '../../data/stack'
-import StackCard from "../../components/StackCard";
-import { StackResponse } from "../../lib/graphql/schema";
+// import { Stack } from '@/data/schema';
+// import { fetchedWorkStack } from '@/data/stack'
+import StackCard from "@/components/StackCard";
+import { StackResponse } from "@/lib/graphql/schema";
 
 type Props = {
   sortedWorkStack: StackResponse[];

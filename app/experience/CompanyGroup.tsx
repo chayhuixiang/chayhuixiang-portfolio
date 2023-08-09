@@ -1,10 +1,10 @@
 "use client";
 
 import React, { useRef, useState, useCallback } from "react";
-import CompanyCard from "../../components/CompanyCard";
-import { CompanyResponse } from "../../lib/graphql/schema";
-// import { Company } from '../../data/schema'
-// import { fetchedCompanies } from '../../data/company'
+import CompanyCard from "@/components/CompanyCard";
+import { CompanyResponse } from "@/lib/graphql/schema";
+// import { Company } from '@/data/schema'
+// import { fetchedCompanies } from '@/data/company'
 
 type Props = {
   sortedCompanies: CompanyResponse;

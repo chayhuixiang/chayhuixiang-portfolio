@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import Portal from "../../components/Portal";
+import Portal from "@/components/Portal";
 import { motion, useAnimationControls, useMotionValue } from "framer-motion";
 import { CheckIcon } from "@heroicons/react/24/outline";
 

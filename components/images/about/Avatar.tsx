@@ -2,7 +2,7 @@
 
 import React from "react";
 import { useTheme } from "next-themes";
-import useMounted from "../../../lib/hooks/useMounted";
+import useMounted from "@/lib/hooks/useMounted";
 
 type Props = {
   className?: string;

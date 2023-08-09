@@ -4,7 +4,7 @@ import React from "react";
 import { useTheme } from "next-themes";
 import Button from "./Button";
 import { SunIcon, MoonIcon } from "@heroicons/react/24/outline";
-import useMounted from "../lib/hooks/useMounted";
+import useMounted from "@/lib/hooks/useMounted";
 
 type Props = {
   className?: string;

@@ -1,11 +1,11 @@
 import React from "react";
-import jsonProjects from "../../data/project.json";
-// import { Project } from '../../data/schema';
+import jsonProjects from "@/data/project.json";
+// import { Project } from '@/data/schema';
 import { graphql, GraphQlQueryResponseData } from "@octokit/graphql";
-import ProjectCard from "../../components/ProjectCard";
+import ProjectCard from "@/components/ProjectCard";
 import Repo from "./Repo";
-import { fetchProjects } from "../../lib/graphql/data";
-import { ProjectResponse } from "../../lib/graphql/schema";
+import { fetchProjects } from "@/lib/graphql/data";
+import { ProjectResponse } from "@/lib/graphql/schema";
 
 const Projects = async () => {
   // const fetchedProjects: ProjectResponse[] =

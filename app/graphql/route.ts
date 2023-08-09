@@ -2,8 +2,8 @@ import { ApolloServer } from "@apollo/server";
 import { startServerAndCreateNextHandler } from "@as-integrations/next";
 import { join } from "path";
 import { readFileSync } from "fs";
-import { prisma } from "../../prisma/prisma";
-import { resolvers } from "../../lib/graphql/resolvers";
+import { prisma } from "@/prisma/prisma";
+import { resolvers } from "@/lib/graphql/resolvers";
 import {
   typeDefs as scalarTypeDefs,
   resolvers as scalarResolvers,

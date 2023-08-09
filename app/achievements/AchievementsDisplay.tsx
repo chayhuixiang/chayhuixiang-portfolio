@@ -1,13 +1,13 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
-// import { fetchedAchievements } from '../../data/achievement'
-// import { Achievement } from '../../data/schema'
-import Button from "../../components/Button";
+// import { fetchedAchievements } from '@/data/achievement'
+// import { Achievement } from '@/data/schema'
+import Button from "@/components/Button";
 import { motion } from "framer-motion";
-import Portal from "../../components/Portal";
+import Portal from "@/components/Portal";
 import { XMarkIcon } from "@heroicons/react/24/outline";
-import External from "../../components/images/achievements/External";
+import External from "@/components/images/achievements/External";
 
 type Props = {
   fetchedAchievements: {

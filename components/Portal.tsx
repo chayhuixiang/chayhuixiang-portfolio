@@ -2,7 +2,7 @@
 
 import React, { ReactNode } from "react";
 import { createPortal } from "react-dom";
-import useMounted from "../lib/hooks/useMounted";
+import useMounted from "@/lib/hooks/useMounted";
 
 type Props = {
   children: ReactNode;

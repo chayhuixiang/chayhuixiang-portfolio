@@ -2,7 +2,7 @@
 
 import { useTheme } from "next-themes";
 import React from "react";
-import useMounted from "../lib/hooks/useMounted";
+import useMounted from "@/lib/hooks/useMounted";
 import ProjectsDeployed from "./images/projects/ProjectsDeployed";
 import ProjectsGithub from "./images/projects/ProjectsGithub";
 

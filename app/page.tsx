@@ -1,9 +1,9 @@
-import jsonSkills from "../data/skill.json";
+import jsonSkills from "@/data/skill.json";
 import ButtonGroup from "./ButtonGroup";
-import Avatar from "../components/images/about/Avatar";
-import SkillCard from "../components/SkillCard";
+import Avatar from "@/components/images/about/Avatar";
+import SkillCard from "@/components/SkillCard";
 import ImageGroup from "./ImageGroup";
-import { fetchSkills } from "../lib/graphql/data";
+import { fetchSkills } from "@/lib/graphql/data";
 
 const About = async () => {
   // const sortedSkills =

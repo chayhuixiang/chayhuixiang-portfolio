@@ -1,8 +1,7 @@
 export default function Head() {
   const seo = {
     title: "Chay Hui Xiang",
-    description:
-      "Chay Hui Xiang is a Year 2 Renaissance Engineering Programme Scholar specialising in the field of Computer Science.",
+    description: "Chay Hui Xiang is a Computer Science Junior @ UC Berkeley.",
     image: "https://chayhuixiang.com/images/about/avatar.png",
     url: "https://chayhuixiang.com",
   };
@@ -21,7 +20,7 @@ export default function Head() {
       <meta charSet="UTF-8" />
       <meta
         name="description"
-        content="Chay Hui Xiang is a Year 2 Renaissance Engineering Programme Scholar specialising in the field of Computer Science."
+        content="Chay Hui Xiang is a Computer Science Junior @ UC Berkeley."
       />
 
       <meta property="og:title" content={seo.title} />

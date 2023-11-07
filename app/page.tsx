@@ -40,8 +40,7 @@ const About = async () => {
                 {/* <Avatar className='relative hidden sm:block lg:hidden flex-shrink' width={192} height={192} /> */}
               </div>
               <p className="text-center sm:text-left">
-                I’m a Year 2 Renaissance Engineering Programme Scholar
-                specialising in the field of Computer Science. Currently, I am
+                I’m a Computer Science Junior @ UC Berkeley. Currently, I am
                 focused on building seamless software experiences at{" "}
                 <a
                   href="https://www.mobbin.com/"
